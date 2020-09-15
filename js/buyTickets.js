@@ -72,3 +72,11 @@ couponBtn.addEventListener('click', () => {
         couponBtn.insertAdjacentHTML('afterend', '<p id="fail">Ingen rabat til dig.</p>')
     }
 })
+
+
+let parser = document.createElement('a');
+parser.href = window.location.href;
+let query = parser.search.substring(1);
+let title = query.replace('-', ' ');
+
+document.querySelector('#buy-tickets h1').innerHTML = `Køb billetter til ${title} her`;

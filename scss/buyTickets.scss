@@ -1,0 +1,85 @@
+$red: #931A25;
+$white: #F5EFEF;
+$black: #343434;
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#buy-tickets {
+    h1 {
+        text-transform: uppercase;
+    }
+
+    #tickets {
+        display: flex;
+        flex-direction: column;
+
+        > div {
+            border: 1px solid $black;
+            padding: 0.25rem 0;
+            display: inline-flex;
+            margin-bottom: 1rem;
+            width: 130px;
+            justify-content: space-between;
+        }
+
+        h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding-left: 0.5rem;
+        }
+
+        .amount-selector {
+            display: flex;
+            padding: 0 0.5rem;
+            border-left: 1px solid $black;                   
+  
+            .minus, .plus {
+                cursor: pointer;
+            }
+
+            .minus {
+                padding-right: 0.2rem;
+            }
+
+            .plus {
+                padding-left: 0.2rem;
+            }
+        }
+    }
+
+    #buy-btn {
+        margin: 1rem 0;
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $white;
+            background-color: $red;
+            padding: .5rem 1rem;
+            font-weight: 700;
+        }
+    }
+
+    #coupon {
+
+        p {
+            text-transform: uppercase;
+            cursor: pointer;
+
+            span {
+                border: 1px solid #343434;
+                border-radius: 50%;
+                width: 22px;
+                height: 22px;
+                display: inline-flex;
+                place-content: center;
+            }
+        }
+    }
+}

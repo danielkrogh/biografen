@@ -2,15 +2,9 @@ $red: #931A25;
 $white: #F5EFEF;
 $black: #343434;
 
-* {
-    margin: 0;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
 #buy-tickets {
+    padding-top: 10rem;
+
     h1 {
         text-transform: uppercase;
     }

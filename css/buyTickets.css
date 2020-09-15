@@ -1,9 +1,18 @@
 #buy-tickets {
-  padding-top: 10rem;
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 120px;
 }
 
 #buy-tickets h1 {
   text-transform: uppercase;
+}
+
+#buy-tickets #payment-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #buy-tickets #tickets {
@@ -68,12 +77,18 @@
   font-weight: 700;
 }
 
-#buy-tickets #coupon p {
+#buy-tickets #coupon {
+  width: 130px;
+  margin-left: 1rem;
+}
+
+#buy-tickets #coupon > p {
+  display: inline;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-#buy-tickets #coupon p span {
+#buy-tickets #coupon > p span {
   border: 1px solid #343434;
   border-radius: 50%;
   width: 22px;
@@ -82,4 +97,41 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
   place-content: center;
+}
+
+#buy-tickets #coupon form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#buy-tickets #coupon form.display {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+#buy-tickets #coupon form input {
+  margin-top: .5rem;
+  outline: none;
+}
+
+#buy-tickets #coupon form button {
+  cursor: pointer;
+  border: none;
+  color: #F5EFEF;
+  background-color: #931A25;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .5rem 1rem;
+  outline: none;
 }

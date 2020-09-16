@@ -157,12 +157,15 @@ p {
     }
 }
 
-.hero-content {
+.hero-circle {
     position: absolute;
-    top: 40%;
-    left: 15%;
+    top: 25%;
     color: white;
-    z-index: 0;
+    z-index: 4;
+    border-radius: 50%;
+    background-color: rgba(147, 26, 37, 0.5) ;
+    height: 500px;
+    width: 500px;
 
     button {
         background-color: transparent;
@@ -187,7 +190,7 @@ p {
 //position
     display: grid;
     grid-template-columns: 40% 30% 30%;
-    height: 300px;
+    height: 400px;
     width: 100%;
 
 //Style 

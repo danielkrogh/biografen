@@ -162,15 +162,18 @@ p {
   width: 100%;
 }
 
-.hero-content {
+.hero-circle {
   position: absolute;
-  top: 40%;
-  left: 15%;
+  top: 25%;
   color: white;
-  z-index: 0;
+  z-index: 4;
+  border-radius: 50%;
+  background-color: rgba(147, 26, 37, 0.5);
+  height: 500px;
+  width: 500px;
 }
 
-.hero-content button {
+.hero-circle button {
   background-color: transparent;
   padding: 5px;
   padding-left: 10px;
@@ -188,7 +191,7 @@ p {
   display: grid;
   -ms-grid-columns: 40% 30% 30%;
       grid-template-columns: 40% 30% 30%;
-  height: 300px;
+  height: 400px;
   width: 100%;
   background-color: #343434;
 }

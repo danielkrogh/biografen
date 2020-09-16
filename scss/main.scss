@@ -6,7 +6,7 @@ $color-dark: #343434;
 $h1-size: 40px;
 $h2-size: 60px;
 $h3-size: 50px;
-$p-size: 30px;
+$p-size: 16px;
 $anchor-size: 40px;
 $border-shadows: 5px 5px 10px #00000030;
 $section-border: 3px solid;
@@ -18,8 +18,26 @@ $section-border: 3px solid;
     margin: 0;
 }
 
+h1 {
+    font-size: $h1-size;
+}
 
-// HEADER / NAV BAR 
+h2 {
+    font-size: $h2-size;
+}
+
+h3 {
+    font-size: $h3-size;
+}
+
+p {
+    font-size: $p-size;
+}
+
+main {
+    top: 120px;
+}
+// HEADER / NAV BAR -------------------------------------------------------------------
 
 .navbar {
     width: 100%;
@@ -62,7 +80,7 @@ $section-border: 3px solid;
     height: 120px;
     width: 100%;
     opacity: 0.4;
-    position: absolute;
+    position: fixed;
     background-color: black;
 }
 
@@ -134,3 +152,66 @@ $section-border: 3px solid;
     transform: scaleX(1);
 }
 
+
+//FOOTER -------------------------------------------------------------------------------
+
+.footer {
+//position
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    height: 300px;
+    width: 100%;
+//Style 
+    background-color: $color-dark;
+}
+
+.footer-logo {
+    margin: 5%;
+    margin-top: 10%;
+    background-color: transparent;
+}
+
+.footer-contact {
+    background-color: transparent;
+    margin: 5%;
+}
+
+.footer-about {
+    background-color: transparent;
+    margin: 5%;
+}
+
+.footer-link {
+    list-style: none;
+    color: $color-white;
+}
+
+.footer-header {
+    color: $color-white;
+}
+//MEDIA QUERIES ------------------------------------------------------------------------
+
+@media (max-device-width: 667px) {
+    
+    // Header / Navbar -----------------
+    .nav-link {
+        font-size: 24px;
+    }
+    // Footer --------------------------
+    .footer {
+        display: grid;
+        grid-template-columns: auto;
+        height: 700px;
+    }
+
+    .footer-link {
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .footer-header {
+        font-size: 24px;
+    }
+}

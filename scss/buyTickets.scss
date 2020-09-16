@@ -2,118 +2,214 @@ $red: #931A25;
 $white: #F5EFEF;
 $black: #343434;
 
-#buy-tickets {
+#order {
+    display: flex;
+    justify-content: space-between;
     width: 80%;
     max-width: 1200px;
     margin: auto;
-    padding-top: 120px;
+    padding-top: 140px;
 
-    h1 {
-        text-transform: uppercase;
-    }
-
-    #payment-container {
-        display: flex;
-        margin-top: 2rem;
-    }
-
-    #tickets {
-        display: flex;
-        flex-direction: column;
-
-        > div {
-            border: 1px solid $black;
-            padding: 0.25rem 0;
-            display: inline-flex;
-            margin-bottom: 1rem;
-            width: 130px;
-            justify-content: space-between;
-        }
-
-        h3 {
-            font-size: 1rem;
+    #buy-tickets {
+    
+        h1 {
             text-transform: uppercase;
-            padding-left: 0.5rem;
         }
-
-        .amount-selector {
+    
+        #payment-container {
             display: flex;
-            padding: 0 0.5rem;
-            border-left: 1px solid $black;                   
-  
-            .minus, .plus {
-                cursor: pointer;
-            }
-
-            .minus {
-                padding-right: 0.2rem;
-            }
-
-            .plus {
-                padding-left: 0.2rem;
-            }
+            margin-top: 2rem;
         }
-    }
-
-    #buy-btn {
-        margin: 1rem 0;
-
-        a {
-            text-decoration: none;
-            text-transform: uppercase;
-            color: $white;
-            background-color: $red;
-            padding: .5rem 1rem;
-            font-weight: 700;
-        }
-    }
-
-    #coupon {
-        width: 130px;
-        margin-left: 1rem;
-
-        > p {
-            display: inline;
-            text-transform: uppercase;
-            cursor: pointer;
-
-            span {
-                border: 1px solid #343434;
-                border-radius: 50%;
-                width: 22px;
-                height: 22px;
-                display: inline-flex;
-                place-content: center;
-            }
-        }
-
-        form {
+    
+        #tickets {
             display: flex;
             flex-direction: column;
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: .5s;
-            
-
-            &.display {
-                transform: scaleY(1);
+    
+            > div {
+                border: 1px solid $black;
+                padding: 0.25rem 0;
+                display: inline-flex;
+                margin-bottom: 1rem;
+                width: 130px;
+                justify-content: space-between;
             }
-
-            input {
-                margin-top: .5rem;
-                outline: none;
+    
+            h3 {
+                font-size: 1rem;
+                text-transform: uppercase;
+                padding-left: 0.5rem;
             }
-
-            button {
-                cursor: pointer;
-                border: none;
+    
+            .amount-selector {
+                display: flex;
+                padding: 0 0.5rem;
+                border-left: 1px solid $black;                   
+      
+                .minus, .plus {
+                    cursor: pointer;
+                }
+    
+                .minus {
+                    padding-right: 0.2rem;
+                }
+    
+                .plus {
+                    padding-left: 0.2rem;
+                }
+            }
+        }
+    
+        #buy-btn {
+            margin: 1rem 0;
+    
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
                 color: $white;
                 background-color: $red;
-                text-transform: uppercase;
-                font-weight: 700;
                 padding: .5rem 1rem;
-                outline: none;
+                font-weight: 700;
             }
+        }
+    
+        #coupon {
+            width: 130px;
+            margin-left: 1rem;
+    
+            > p {
+                display: inline;
+                text-transform: uppercase;
+                cursor: pointer;
+    
+                span {
+                    border: 1px solid #343434;
+                    border-radius: 50%;
+                    width: 22px;
+                    height: 22px;
+                    display: inline-flex;
+                    place-content: center;
+                }
+            }
+    
+            form {
+                display: flex;
+                flex-direction: column;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: .5s;
+                
+    
+                &.display {
+                    transform: scaleY(1);
+                }
+    
+                input {
+                    margin-top: .5rem;
+                    outline: none;
+                }
+    
+                button {
+                    cursor: pointer;
+                    border: none;
+                    color: $white;
+                    background-color: $red;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    padding: .5rem 1rem;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    #select-seats {
+        $general-white-color: black;
+        $background-color: #242333;
+        $standard-seat-color: #444451;
+        $selected-seats: #52C78E;
+        $occupied-seats: #C75252;
+        $box-shadow-color: rgba(255, 255, 255, 0.7);
+        $showcase-color: rgba(0, 0, 0, 0.1);
+        $showcase-col: #777777;
+        $text-color: #52C78E;
+
+        .movice-container {
+            margin: 20px 0;
+    
+            select {
+                background-color: $general-white-color;
+                border: 0;
+                border-radius: 5px;
+                font-size: 14px;
+                margin-left: 10px;
+                padding: 5px 15px;
+                appearance: none;
+            }
+        }
+    
+        .container {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+    
+        .seat {
+            background-color: $standard-seat-color;
+            height: 24px;
+            width: 30px;
+            margin: 3px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+    
+            &.selected {
+                background-color: $selected-seats;
+            }
+    
+            &.occupied {
+                background-color: $occupied-seats;
+            }
+    
+            &:nth-of-type(2) {
+                margin-right: 18px;
+            }
+    
+            &:nth-last-of-type(2) {
+                margin-left: 18px;
+            }
+    
+            &:not(.occupied):hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+    
+        .showcase {
+            background-color: $showcase-color;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: $showcase-col;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+    
+            &.seat:not(.occupied):hover {
+                cursor: pointer;
+                transform: scale(1);
+            }
+    
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 10px;
+    
+                small {
+                    margin-left: 2px;
+                }
+            }
+        }
+    
+        .row {
+            display: flex;
         }
     }
 }

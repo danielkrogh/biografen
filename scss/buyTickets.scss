@@ -23,6 +23,7 @@ $black: #343434;
     #order-container {
         display: flex;
         justify-content: space-between;
+        margin-top: 2rem;
 
         #buy-tickets {
         
@@ -162,7 +163,7 @@ $black: #343434;
             }
         
             .seat {
-                background-color: $standard-seat-color;
+                background-color: $black;
                 height: 24px;
                 width: 30px;
                 margin: 3px;
@@ -174,7 +175,7 @@ $black: #343434;
                 }
         
                 &.occupied {
-                    background-color: $occupied-seats;
+                    background-color: $red;
                 }
         
                 &:nth-of-type(2) {
@@ -222,10 +223,4 @@ $black: #343434;
             }
         }
     }
-}
-
-
-.disable {
-    filter: blur(5px);
-    pointer-events: none;
 }

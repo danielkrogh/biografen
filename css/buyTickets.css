@@ -24,6 +24,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 2rem;
 }
 
 #order #order-container #buy-tickets #payment-container {
@@ -176,7 +177,7 @@
 }
 
 #order #order-container #select-seats .seat {
-  background-color: #444451;
+  background-color: #343434;
   height: 24px;
   width: 30px;
   margin: 3px;
@@ -189,7 +190,7 @@
 }
 
 #order #order-container #select-seats .seat.occupied {
-  background-color: #C75252;
+  background-color: #931A25;
 }
 
 #order #order-container #select-seats .seat:nth-of-type(2) {
@@ -247,10 +248,4 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.disable {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-  pointer-events: none;
 }

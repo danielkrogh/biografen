@@ -161,6 +161,8 @@ main {
     grid-template-columns: 40% 30% 30%;
     height: 300px;
     width: 100%;
+    position: fixed;
+    bottom: 0;
 //Style 
     background-color: $color-dark;
 }

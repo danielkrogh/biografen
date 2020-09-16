@@ -1,33 +1,41 @@
-let minus = document.querySelectorAll('.minus');
-let plus = document.querySelectorAll('.plus');
-let quantity = document.querySelectorAll('.quantity');
+/*
+    Antal biletter og kupon
+*/
+let minus = document.querySelectorAll('.minus'); // Alle minus knapper
+let plus = document.querySelectorAll('.plus'); // Alle plus knapper
+let quantity = document.querySelectorAll('.quantity'); // Alle billettypers antal
 
+// Billet priser
 const priceOld = 70;
 const priceAdult = 85;
 const priceYoung = 65;
 
+// Samlet pris
 let total = document.querySelector('#total');
 
-minus.forEach(elm => elm.addEventListener('click', () => {
-    if (elm.nextElementSibling.innerHTML == 0) {
 
-    } else {
+minus.forEach(elm => elm.addEventListener('click', () => { // Klik på minus
+    if (elm.nextElementSibling.innerHTML == 0) { // Hvis quantity allerede er nul gøres intet
+
+    } else { // Ellers trækkes en fra nuværende quantity
         elm.nextElementSibling.innerHTML = elm.nextElementSibling.innerHTML - 1;
     }
 
-    calculatePrice();
+    calculatePrice(); // Funktion til at beregne pris kaldes
+    allSelected(); // Funktion til at vise/skjule siddepladser kaldes
 }))
 
-plus.forEach(elm => elm.addEventListener('click', () => {
-    elm.previousElementSibling.innerHTML = Number(elm.previousElementSibling.innerHTML) + 1;
+plus.forEach(elm => elm.addEventListener('click', () => { // Klik på plus
+    elm.previousElementSibling.innerHTML = Number(elm.previousElementSibling.innerHTML) + 1; // Quantity tilføjes en
 
-    calculatePrice();
+    calculatePrice(); // Funktion til at beregne pris kaldes
+    allSelected(); // Funktion til at vise/skjule siddepladser kaldes
 }))
 
+ // Funktion til at beregne pris
 function calculatePrice() {
-    total.innerHTML = (quantity[0].innerHTML * priceOld + quantity[1].innerHTML * priceAdult + quantity[2].innerHTML * priceYoung) * discount;
+    total.innerHTML = (quantity[0].innerHTML * priceOld + quantity[1].innerHTML * priceAdult + quantity[2].innerHTML * priceYoung) * discount; // Quantity ganges med pris og plusses sammen
 }
-
 
 let coupon = document.querySelector('#coupon p');
 let couponCodeInput = document.querySelector('#coupon input');
@@ -74,24 +82,13 @@ couponBtn.addEventListener('click', () => {
 })
 
 
-let parser = document.createElement('a');
-parser.href = window.location.href;
-let query = parser.search.substring(1);
-let title = query.replace('-', ' ');
 
-document.querySelector('#buy-tickets h1').innerHTML = `Køb billetter til ${title} her`;
-
-
-
-
-
+/*
+    Valg af placering
+*/
 const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
 const movieSelect = document.getElementById('movie');
-
-populateUI();
-
-let ticketPrice = +movieSelect.value;
 
 function setMovieData(movieIndex, moviePrice) {
     localStorage.setItem('selectedMovieIndex', movieIndex);
@@ -126,18 +123,66 @@ function populateUI() {
         movieSelect.selectedIndex = selectedMovieIndex;
     }
 
-    movieSelect.addEventListener('change', (e) => {
-        ticketPrice = +e.target.value;
-        setMovieData(e.target.selectedIndex, e.target.value);
-        updateSelectedCount();
-    });
-
 container.addEventListener('click', (e) => {
     if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
         e.target.classList.toggle('selected');
 
         updateSelectedCount();
+        allSelected();
     }
 })
 
+
+function allSelected() {
+    let ticketsSelected = Number(quantity[0].innerHTML) + Number(quantity[1].innerHTML) + Number(quantity[2].innerHTML);
+    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+
+    if (ticketsSelected == 0) {
+        document.querySelectorAll('.row .seat').forEach(seat => {
+            seat.classList.add('occupied')
+        })
+        document.querySelectorAll('.row .seat.selected').forEach(seat => {
+            seat.classList.remove('selected')
+        })
+        localStorage.removeItem('selectedSeats')
+        occupySeats();
+    } else if (ticketsSelected == 1 && selectedSeats == null) {
+        document.querySelectorAll('.row .seat').forEach(seat => {
+            seat.classList.remove('occupied')
+        })
+        occupySeats();
+    } else if (selectedSeats.length == ticketsSelected) {
+        document.querySelectorAll('.row .seat:not(.selected)').forEach(seat => {
+            seat.classList.add('occupied')
+        })
+    } else if (selectedSeats.length > ticketsSelected) {
+        document.querySelectorAll('.row .seat.occupied').forEach(seat => {
+            seat.classList.remove('occupied')
+        })
+        document.querySelectorAll('.row .seat.selected').forEach(seat => {
+            seat.classList.remove('selected')
+        })
+        occupySeats();
+    } else {
+        document.querySelectorAll('.row .seat:not(.selected)').forEach(seat => {
+            seat.classList.remove('occupied')
+        })
+        occupySeats();
+    }
+}
+
+
+function occupySeats() {
+    let occupiedSeats = JSON.parse(localStorage.getItem("occupiedSeats"));
+
+    occupiedSeats.forEach(elm => seats[elm].classList.add('occupied'));
+
+    document.querySelector('#order h1').innerHTML = `Køb billetter til ${localStorage.getItem('movieTitle')} her`;
+}
+
+
+occupySeats();
+populateUI();
+allSelected();
 updateSelectedCount();
+calculatePrice();

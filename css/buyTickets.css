@@ -1,28 +1,38 @@
 #order {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 80%;
   max-width: 1200px;
   margin: auto;
   padding-top: 140px;
 }
 
-#order #buy-tickets h1 {
+#order h1, #order h2 {
   text-transform: uppercase;
 }
 
-#order #buy-tickets #payment-container {
+#order h2 {
+  font-size: 30px;
+}
+
+#order p {
+  font-size: 16px;
+}
+
+#order #order-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#order #buy-tickets #tickets {
+#order #order-container #buy-tickets #payment-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#order #order-container #buy-tickets #tickets {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,7 +42,7 @@
           flex-direction: column;
 }
 
-#order #buy-tickets #tickets > div {
+#order #order-container #buy-tickets #tickets > div {
   border: 1px solid #343434;
   padding: 0.25rem 0;
   display: -webkit-inline-box;
@@ -45,13 +55,13 @@
           justify-content: space-between;
 }
 
-#order #buy-tickets #tickets h3 {
+#order #order-container #buy-tickets #tickets h3 {
   font-size: 1rem;
   text-transform: uppercase;
   padding-left: 0.5rem;
 }
 
-#order #buy-tickets #tickets .amount-selector {
+#order #order-container #buy-tickets #tickets .amount-selector {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,23 +69,23 @@
   border-left: 1px solid #343434;
 }
 
-#order #buy-tickets #tickets .amount-selector .minus, #order #buy-tickets #tickets .amount-selector .plus {
+#order #order-container #buy-tickets #tickets .amount-selector .minus, #order #order-container #buy-tickets #tickets .amount-selector .plus {
   cursor: pointer;
 }
 
-#order #buy-tickets #tickets .amount-selector .minus {
+#order #order-container #buy-tickets #tickets .amount-selector .minus {
   padding-right: 0.2rem;
 }
 
-#order #buy-tickets #tickets .amount-selector .plus {
+#order #order-container #buy-tickets #tickets .amount-selector .plus {
   padding-left: 0.2rem;
 }
 
-#order #buy-tickets #buy-btn {
+#order #order-container #buy-tickets #buy-btn {
   margin: 1rem 0;
 }
 
-#order #buy-tickets #buy-btn a {
+#order #order-container #buy-tickets #buy-btn a {
   text-decoration: none;
   text-transform: uppercase;
   color: #F5EFEF;
@@ -84,18 +94,18 @@
   font-weight: 700;
 }
 
-#order #buy-tickets #coupon {
+#order #order-container #buy-tickets #coupon {
   width: 130px;
   margin-left: 1rem;
 }
 
-#order #buy-tickets #coupon > p {
+#order #order-container #buy-tickets #coupon > p {
   display: inline;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-#order #buy-tickets #coupon > p span {
+#order #order-container #buy-tickets #coupon > p span {
   border: 1px solid #343434;
   border-radius: 50%;
   width: 22px;
@@ -106,7 +116,7 @@
   place-content: center;
 }
 
-#order #buy-tickets #coupon form {
+#order #order-container #buy-tickets #coupon form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,17 +132,17 @@
   transition: .5s;
 }
 
-#order #buy-tickets #coupon form.display {
+#order #order-container #buy-tickets #coupon form.display {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
 }
 
-#order #buy-tickets #coupon form input {
+#order #order-container #buy-tickets #coupon form input {
   margin-top: .5rem;
   outline: none;
 }
 
-#order #buy-tickets #coupon form button {
+#order #order-container #buy-tickets #coupon form button {
   cursor: pointer;
   border: none;
   color: #F5EFEF;
@@ -143,11 +153,11 @@
   outline: none;
 }
 
-#order #select-seats .movice-container {
+#order #order-container #select-seats .movice-container {
   margin: 20px 0;
 }
 
-#order #select-seats .movice-container select {
+#order #order-container #select-seats .movice-container select {
   background-color: black;
   border: 0;
   border-radius: 5px;
@@ -159,13 +169,13 @@
           appearance: none;
 }
 
-#order #select-seats .container {
+#order #order-container #select-seats .container {
   -webkit-perspective: 1000px;
           perspective: 1000px;
   margin-bottom: 30px;
 }
 
-#order #select-seats .seat {
+#order #order-container #select-seats .seat {
   background-color: #444451;
   height: 24px;
   width: 30px;
@@ -174,29 +184,29 @@
   border-top-right-radius: 10px;
 }
 
-#order #select-seats .seat.selected {
+#order #order-container #select-seats .seat.selected {
   background-color: #52C78E;
 }
 
-#order #select-seats .seat.occupied {
+#order #order-container #select-seats .seat.occupied {
   background-color: #C75252;
 }
 
-#order #select-seats .seat:nth-of-type(2) {
+#order #order-container #select-seats .seat:nth-of-type(2) {
   margin-right: 18px;
 }
 
-#order #select-seats .seat:nth-last-of-type(2) {
+#order #order-container #select-seats .seat:nth-last-of-type(2) {
   margin-left: 18px;
 }
 
-#order #select-seats .seat:not(.occupied):hover {
+#order #order-container #select-seats .seat:not(.occupied):hover {
   cursor: pointer;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-#order #select-seats .showcase {
+#order #order-container #select-seats .showcase {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 5px 10px;
   border-radius: 5px;
@@ -210,13 +220,13 @@
           justify-content: space-between;
 }
 
-#order #select-seats .showcase.seat:not(.occupied):hover {
+#order #order-container #select-seats .showcase.seat:not(.occupied):hover {
   cursor: pointer;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-#order #select-seats .showcase li {
+#order #order-container #select-seats .showcase li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -229,12 +239,18 @@
   margin: 0 10px;
 }
 
-#order #select-seats .showcase li small {
+#order #order-container #select-seats .showcase li small {
   margin-left: 2px;
 }
 
-#order #select-seats .row {
+#order #order-container #select-seats .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.disable {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  pointer-events: none;
 }

@@ -34,9 +34,6 @@ p {
     font-size: $p-size;
 }
 
-main {
-    top: 120px;
-}
 // HEADER / NAV BAR -------------------------------------------------------------------
 
 .navbar {
@@ -82,6 +79,7 @@ main {
     opacity: 0.4;
     position: fixed;
     background-color: black;
+    z-index: 20;
 }
 
 .line {
@@ -151,6 +149,36 @@ main {
 .nav-link:hover::after {
     transform: scaleX(1);
 }
+// MAIN CONTENT ------------------------------------------------------------------------
+
+.hero {
+    img {
+        width: 100%;
+    }
+}
+
+.hero-content {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    color: white;
+    z-index: 0;
+
+    button {
+        background-color: transparent;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 2px solid $color-white;
+        color: $color-white;
+        text-transform: uppercase;
+        margin-left: 30%;
+        margin-top: 5%;
+        font-weight: bold;
+    }
+}
+
+
 
 
 //FOOTER -------------------------------------------------------------------------------
@@ -161,8 +189,7 @@ main {
     grid-template-columns: 40% 30% 30%;
     height: 300px;
     width: 100%;
-    position: fixed;
-    bottom: 0;
+
 //Style 
     background-color: $color-dark;
 }

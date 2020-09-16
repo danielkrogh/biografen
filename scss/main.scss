@@ -6,7 +6,7 @@ $color-dark: #343434;
 $h1-size: 40px;
 $h2-size: 60px;
 $h3-size: 50px;
-$p-size: 30px;
+$p-size: 16px;
 $anchor-size: 40px;
 $border-shadows: 5px 5px 10px #00000030;
 $section-border: 3px solid;
@@ -77,7 +77,7 @@ p {
     height: 120px;
     width: 100%;
     opacity: 0.4;
-    position: absolute;
+    position: fixed;
     background-color: black;
 }
 
@@ -156,10 +156,8 @@ p {
 //position
     display: grid;
     grid-template-columns: 40% 30% 30%;
-    position: absolute;
-    height: 500px;
+    height: 300px;
     width: 100%;
-    bottom: 0;
 //Style 
     background-color: $color-dark;
 }
@@ -183,10 +181,6 @@ p {
 .footer-link {
     list-style: none;
     color: $color-white;
-    
-    p {
-        font-size: 24px;
-    }
 }
 
 .footer-header {

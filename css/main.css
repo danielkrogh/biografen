@@ -17,7 +17,7 @@ h3 {
 }
 
 p {
-  font-size: 30px;
+  font-size: 16px;
 }
 
 .navbar {
@@ -76,7 +76,7 @@ p {
   height: 120px;
   width: 100%;
   opacity: 0.4;
-  position: absolute;
+  position: fixed;
   background-color: black;
 }
 
@@ -162,10 +162,8 @@ p {
   display: grid;
   -ms-grid-columns: 40% 30% 30%;
       grid-template-columns: 40% 30% 30%;
-  position: absolute;
-  height: 500px;
+  height: 300px;
   width: 100%;
-  bottom: 0;
   background-color: #343434;
 }
 
@@ -188,10 +186,6 @@ p {
 .footer-link {
   list-style: none;
   color: #f5efef;
-}
-
-.footer-link p {
-  font-size: 24px;
 }
 
 .footer-header {

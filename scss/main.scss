@@ -183,6 +183,10 @@ p {
 .footer-link {
     list-style: none;
     color: $color-white;
+    
+    p {
+        font-size: 24px;
+    }
 }
 
 .footer-header {
@@ -194,6 +198,23 @@ p {
     
     // Header / Navbar -----------------
     .nav-link {
+        font-size: 24px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: auto;
+        height: 700px;
+    }
+
+    .footer-link {
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .footer-header {
         font-size: 24px;
     }
 }

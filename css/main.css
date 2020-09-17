@@ -25,6 +25,7 @@ p {
   background-image: url(/img/Biografen_Grand_Stockholm.png);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .section-img {
@@ -92,8 +93,27 @@ p {
 .highlight-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 1050px;
   background-color: #931a25;
+  display: -ms-grid;
+  display: grid;
+}
+
+.highlight-section button {
+  width: 15%;
+  font-size: 32px;
+  font-weight: bolder;
+  margin: auto;
+  padding: 10px;
+  color: #343434;
+  background-color: #f5efef;
+  border: none;
+  margin-bottom: 3%;
+}
+
+.highlight-section button:hover {
+  color: #f5efef;
+  background-color: #343434;
 }
 
 .highlight-header {
@@ -103,9 +123,56 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   color: white;
-  padding-top: 5%;
+  padding: 5%;
   text-decoration: underline;
   text-transform: uppercase;
+}
+
+.highlight-films {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.highlight-film {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+.highlight-film img {
+  height: 400px;
+}
+
+.highlight-film button {
+  width: 70%;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: auto;
+  margin-top: 20px;
+  border: none;
+  color: #343434;
+  background-color: #f5efef;
+}
+
+.highlight-film button:hover {
+  color: #f5efef;
+  background-color: #343434;
+}
+
+.section-line {
+  height: 3px;
+  width: 80%;
+  background-color: #f5efef;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 .senior-section-info {
@@ -114,10 +181,72 @@ p {
   background-color: #343434;
 }
 
+#senior {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#senior button {
+  margin-left: 15%;
+  margin-top: 8%;
+  padding: 10px;
+  width: 120px;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border: none;
+  color: #343434;
+  background-color: #f5efef;
+}
+
+#senior button:hover {
+  color: #f5efef;
+  background-color: #343434;
+  border: 2px solid #f5efef;
+}
+
+.senior-info {
+  display: -ms-grid;
+  display: grid;
+  color: #f5efef;
+  margin-left: 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .arrspec-section {
   width: 100%;
   height: 100vh;
   background-color: #f5efef;
+  display: -ms-grid;
+  display: grid;
+  padding-top: 80px;
+  -ms-grid-columns: 48% 4px 48%;
+      grid-template-columns: 48% 4px 48%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.arrspec-article {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.arrspec-middle {
+  height: 70%;
+  width: 3px;
+  background-color: #343434;
+  margin-top: 150px;
 }
 
 @media (max-device-width: 667px) {
@@ -172,5 +301,84 @@ p {
   .hero-content h1 {
     margin-left: 5%;
     font-size: 16px;
+  }
+  .highlight-section {
+    position: relative;
+    width: 100%;
+    height: 1400px;
+    background-color: #931a25;
+    display: -ms-grid;
+    display: grid;
+  }
+  .highlight-section button {
+    width: 40%;
+    height: 45px;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-top: 20px;
+    padding: 8px;
+    color: #f5efef;
+    background-color: #343434;
+    border: 1px solid #f5efef;
+    margin-bottom: 50px;
+  }
+  .highlight-section button:hover {
+    color: #343434;
+    background-color: #f5efef;
+  }
+  .highlight-header {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    padding: 5%;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+  .highlight-header h3 {
+    font-size: 24px;
+  }
+  .highlight-films {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .highlight-film {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+  }
+  .highlight-film img {
+    height: 300px;
+  }
+  .highlight-film button {
+    width: 70%;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bolder;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    color: #343434;
+    background-color: #f5efef;
+  }
+  .highlight-film button:hover {
+    color: #f5efef;
+    background-color: #343434;
+  }
+  .section-line {
+    height: 3px;
+    width: 80%;
+    background-color: #f5efef;
+    margin: auto;
+    margin-top: 30px;
   }
 }

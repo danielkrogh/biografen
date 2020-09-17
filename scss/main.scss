@@ -40,6 +40,8 @@ p {
     background-image: url(/img/Biografen_Grand_Stockholm.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 .section-img {
@@ -110,18 +112,76 @@ p {
 .highlight-section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 1050px;
     background-color: $color-red;
+    display: grid;
+
+    button {
+        width: 15%;
+        font-size: 32px;
+        font-weight: bolder;
+        margin: auto;
+        padding: 10px;
+        color: $color-dark;
+        background-color: $color-white;
+        border: none;
+        margin-bottom: 3%;
+    }
+
+    button:hover {
+        color: $color-white;
+        background-color: $color-dark;
+    }
 }
 
 .highlight-header {
     display: grid;
     justify-content: center;
     color: white;
-    padding-top: 5%;
+    padding: 5%;
     text-decoration: underline;
     text-transform: uppercase;
+    
+}
 
+.highlight-films {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+}
+
+.highlight-film {
+    display: grid;
+    grid-template-rows: auto auto;
+    
+    img {
+        height: 400px;
+    }
+    button {
+        width: 70%;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+        margin: auto;
+        margin-top: 20px;
+        border: none;
+        color: $color-dark;
+        background-color: $color-white;
+    }
+
+    button:hover {
+        color: $color-white;
+        background-color: $color-dark;
+    }
+}
+
+.section-line {
+    height: 3px;
+    width: 80%;
+    background-color: $color-white;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .senior-section-info {
@@ -129,13 +189,58 @@ p {
     height: 600px;
     background-color: $color-dark;
 }
+#senior {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    
+    button {
+        margin-left: 15%;
+        margin-top: 8%;
+        padding: 10px; 
+        width: 120px;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: bolder;
+        border: none;
+        color: $color-dark;
+        background-color: $color-white;
+    }
+
+    button:hover {
+        color: $color-white;
+        background-color: $color-dark;
+        border: 2px solid $color-white;
+    }
+}
+
+.senior-info {
+    display: grid;
+    color: $color-white;
+    margin-left: 10%;
+    justify-content: center;
+}
 
 .arrspec-section {
     width: 100%;
     height: 100vh;
     background-color: $color-white;
+    display: grid;
+    padding-top: 80px;
+    grid-template-columns: 48% 4px 48%;
+    justify-content: space-evenly;
 }
 
+.arrspec-article {
+    display: grid;
+    justify-content: center;
+}
+.arrspec-middle {
+    height: 70%;
+    width: 3px;
+    background-color: $color-dark;
+    margin-top: 150px;
+}
 
 //MEDIA QUERIES ------------------------------------------------------------------------
 
@@ -202,4 +307,86 @@ p {
             font-size: 16px;
         }
     }
+    //HIGHLIGHT ----------------------------------
+
+    .highlight-section {
+        position: relative;
+        width: 100%;
+        height: 1400px;
+        background-color: $color-red;
+        display: grid;
+    
+        button {
+            width: 40%;
+            height: 45px;
+            font-size: 18px;
+            font-weight: bolder;
+            margin-top: 20px;
+            padding: 8px;
+            color: $color-white;
+            background-color: $color-dark;
+            border: 1px solid $color-white;
+            margin-bottom: 50px;
+        }
+    
+        button:hover {
+            color: $color-dark;
+            background-color: $color-white;
+        }
+    }
+    
+    .highlight-header {
+        display: grid;
+        justify-content: center;
+        color: white;
+        padding: 5%;
+        text-decoration: underline;
+        text-transform: uppercase;
+        
+        h3 {
+            font-size: 24px;
+        }
+    }
+    
+    .highlight-films {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: space-evenly;
+    }
+    
+    .highlight-film {
+        display: grid;
+        grid-template-rows: auto auto;
+        
+        img {
+            height: 300px;
+        }
+        button {
+            width: 70%;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: bolder;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: none;
+            color: $color-dark;
+            background-color: $color-white;
+        }
+    
+        button:hover {
+            color: $color-white;
+            background-color: $color-dark;
+        }
+    }
+    
+    .section-line {
+        height: 3px;
+        width: 80%;
+        background-color: $color-white;
+        margin: auto;
+        margin-top: 30px;
+    }
+    
+
 }

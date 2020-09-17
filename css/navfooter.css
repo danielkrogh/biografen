@@ -164,7 +164,7 @@ p {
   display: grid;
   -ms-grid-columns: 40% 30% 30%;
       grid-template-columns: 40% 30% 30%;
-  height: 400px;
+  height: 411px;
   width: 100%;
   background-color: #343434;
 }

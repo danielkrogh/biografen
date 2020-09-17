@@ -27,7 +27,6 @@ $selected-seats: #52C78E;
     #order-container {
         display: flex;
         justify-content: space-between;
-        margin: 2rem 0;
 
         #buy-tickets {
 
@@ -290,10 +289,78 @@ $selected-seats: #52C78E;
             }
         }
     }
+
+    #order-info {
+        display: flex;
+        justify-content: space-around;
+
+        div {
+
+            &:first-of-type {
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            &:last-of-type {
+
+                #movie {
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
 }
 
 
 
 .active {
     background-color: $selected-seats;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+#order > div {
+    position: relative;
+    margin: 2rem 0;
+}
+
+#order > div > section {
+    transition: 1s;
+    width: 100%;
+
+    &.hide-left {
+        position: absolute;
+        top: 0%;
+        left: -150%;
+    }
+
+    &.middle {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+
+    &.hide-right {
+        position: absolute;
+        top: 0;
+        left: 150%;
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    #order-container, #order-info {
+        flex-direction: column;
+    }
+
+    #movie-img img {
+        width: 100%;
+    }
 }

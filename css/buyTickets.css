@@ -26,7 +26,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 2rem 0;
 }
 
 #order #order-container #buy-tickets #date-container {
@@ -316,6 +315,73 @@
   background-size: cover;
 }
 
+#order #order-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#order #order-info div:first-of-type form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#order #order-info div:last-of-type #movie {
+  text-transform: capitalize;
+}
+
 .active {
   background-color: #52C78E;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#order > div {
+  position: relative;
+  margin: 2rem 0;
+}
+
+#order > div > section {
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 100%;
+}
+
+#order > div > section.hide-left {
+  position: absolute;
+  top: 0%;
+  left: -150%;
+}
+
+#order > div > section.middle {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+#order > div > section.hide-right {
+  position: absolute;
+  top: 0;
+  left: 150%;
+}
+
+@media only screen and (max-width: 768px) {
+  #order-container, #order-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #movie-img img {
+    width: 100%;
+  }
 }

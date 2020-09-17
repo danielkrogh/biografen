@@ -27,7 +27,7 @@ $selected-seats: #52C78E;
     #order-container {
         display: flex;
         justify-content: space-between;
-        margin-top: 2rem;
+        margin: 2rem 0;
 
         #buy-tickets {
 
@@ -65,6 +65,12 @@ $selected-seats: #52C78E;
                     margin-bottom: 1rem;
                     width: 130px;
                     justify-content: space-between;
+                    align-items: center;
+                    height: 24px;
+
+                    &:first-of-type {
+                        border-top: none;
+                    }
                 }
         
                 h3 {
@@ -91,6 +97,13 @@ $selected-seats: #52C78E;
                     }
                 }
             }
+
+            .result {
+
+                span {
+                    font-weight: 700;
+                }
+            }
         
             #buy-btn {
                 margin-top: 1rem;
@@ -114,9 +127,11 @@ $selected-seats: #52C78E;
                 margin-left: 1rem;
         
                 > p {
-                    display: inline;
                     text-transform: uppercase;
                     cursor: pointer;
+                    border: 1px solid #343434;
+                    border-top: none;
+                    padding: 0.25rem;
         
                     span {
                         border: 1px solid #343434;
@@ -141,8 +156,17 @@ $selected-seats: #52C78E;
                     }
         
                     input {
-                        margin-top: .5rem;
+                        margin-top: 1rem;
                         outline: none;
+                        border: 1px solid $black;
+                        padding: 0.25rem;
+                        text-transform: uppercase;
+                        height: 24px;
+                        font-size: 16px;
+
+                        &::-webkit-input-placeholder {
+                            color: $black;
+                        }
                     }
         
                     button {
@@ -154,6 +178,10 @@ $selected-seats: #52C78E;
                         font-weight: 700;
                         padding: .5rem 1rem;
                         outline: none;
+                    }
+
+                    #success, #fail {
+                        font-size: 12px;
                     }
                 }
             }
@@ -185,7 +213,6 @@ $selected-seats: #52C78E;
         
             .container {
                 perspective: 1000px;
-                margin-bottom: 30px;
             }
         
             .seat {
@@ -254,8 +281,12 @@ $selected-seats: #52C78E;
                 height: 150px;
                 width: 100%;
                 margin: .5rem 0;
-                transform: rotateX(60deg);
-                box-shadow: 0px -5px 10px 2px $black;
+                transform: rotateX(240deg);
+                box-shadow: 0px 5px 10px 2px $black;
+                background-image: url(/img/Poster-Trash.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         }
     }

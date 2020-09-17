@@ -173,10 +173,11 @@ function allSelected() {
 
 
 let dates = document.querySelectorAll('.date-row p');
-const currentDate = JSON.parse(localStorage.getItem('occupiedSeats'));
-let datesOccupied = [currentDate, [13,14], [15,16], [17,18], [19,20], [21,22]]
+const currentOccupiedSeats = JSON.parse(localStorage.getItem('currentOccupiedSeats'));
+let datesOccupied = [currentOccupiedSeats, [13,14], [15,16], [17,18], [19,20], [21,22]]
 
 dates[0].classList.add('active');
+localStorage.setItem('occupiedSeats', JSON.stringify(currentOccupiedSeats));
 
 dates.forEach(date => date.addEventListener('click', () => {
     dates.forEach(date => date.classList.remove('active'));
@@ -196,12 +197,13 @@ allSelected();
 
 
 function occupySeats() {
-    let occupiedSeats = JSON.parse(localStorage.getItem("occupiedSeats"));
+    let occupiedSeats = JSON.parse(localStorage.getItem('occupiedSeats'));
 
     if (occupiedSeats) {
         occupiedSeats.forEach(elm => seats[elm].classList.add('occupied'));
 
         document.querySelector('#order h1').innerHTML = `Køb billetter til ${localStorage.getItem('movieTitle')} her`;
         document.querySelector('#movie-img img').src = `img/Poster-${localStorage.getItem('movieTitle')}.jpg`
+        document.querySelector('.screen').style.backgroundImage = `url(/img/Poster-${localStorage.getItem('movieTitle')}.jpg)`;
     }
 }

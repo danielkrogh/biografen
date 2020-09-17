@@ -26,7 +26,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 #order #order-container #buy-tickets #date-container {
@@ -74,6 +74,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 24px;
+}
+
+#order #order-container #buy-tickets #tickets > div:first-of-type {
+  border-top: none;
 }
 
 #order #order-container #buy-tickets #tickets h3 {
@@ -102,6 +110,10 @@
   padding-left: 0.2rem;
 }
 
+#order #order-container #buy-tickets .result span {
+  font-weight: 700;
+}
+
 #order #order-container #buy-tickets #buy-btn {
   margin-top: 1rem;
   width: 100%;
@@ -125,9 +137,11 @@
 }
 
 #order #order-container #buy-tickets #coupon > p {
-  display: inline;
   text-transform: uppercase;
   cursor: pointer;
+  border: 1px solid #343434;
+  border-top: none;
+  padding: 0.25rem;
 }
 
 #order #order-container #buy-tickets #coupon > p span {
@@ -163,8 +177,17 @@
 }
 
 #order #order-container #buy-tickets #coupon form input {
-  margin-top: .5rem;
+  margin-top: 1rem;
   outline: none;
+  border: 1px solid #343434;
+  padding: 0.25rem;
+  text-transform: uppercase;
+  height: 24px;
+  font-size: 16px;
+}
+
+#order #order-container #buy-tickets #coupon form input::-webkit-input-placeholder {
+  color: #343434;
 }
 
 #order #order-container #buy-tickets #coupon form button {
@@ -176,6 +199,10 @@
   font-weight: 700;
   padding: .5rem 1rem;
   outline: none;
+}
+
+#order #order-container #buy-tickets #coupon form #success, #order #order-container #buy-tickets #coupon form #fail {
+  font-size: 12px;
 }
 
 #order #order-container #select-seats .movice-container {
@@ -197,7 +224,6 @@
 #order #order-container #select-seats .container {
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  margin-bottom: 30px;
 }
 
 #order #order-container #select-seats .seat {
@@ -280,10 +306,14 @@
   height: 150px;
   width: 100%;
   margin: .5rem 0;
-  -webkit-transform: rotateX(60deg);
-          transform: rotateX(60deg);
-  -webkit-box-shadow: 0px -5px 10px 2px #343434;
-          box-shadow: 0px -5px 10px 2px #343434;
+  -webkit-transform: rotateX(240deg);
+          transform: rotateX(240deg);
+  -webkit-box-shadow: 0px 5px 10px 2px #343434;
+          box-shadow: 0px 5px 10px 2px #343434;
+  background-image: url(/img/Poster-Trash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .active {

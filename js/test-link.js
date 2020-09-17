@@ -9,7 +9,9 @@ buyBtn.forEach(elm => elm.addEventListener('click', () => {
     localStorage.setItem('movieTitle', event.target.dataset.title); // Filmes titel føjes til local storage
     if (event.target.dataset.title == 'trash') { // Hvis filems titel er trash tilføjes optagede pladser til filmen 'Trash' til local storage
         localStorage.setItem('occupiedSeats', JSON.stringify(occupiedTrash));
+        localStorage.setItem('currentOccupiedSeats', JSON.stringify(occupiedTrash));
     } else if (event.target.dataset.title == 'riot') { // Hvis filems titel er riot tilføjes optagede pladser til filmen 'Riot' til local storage
         localStorage.setItem('occupiedSeats', JSON.stringify(occupiedRiot));
+        localStorage.setItem('currentOccupiedSeats', JSON.stringify(occupiedRiot));
     }
 }))

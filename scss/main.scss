@@ -201,22 +201,4 @@ p {
             font-size: 16px;
         }
     }
-    
-    // Footer --------------------------
-    .footer {
-        display: grid;
-        grid-template-columns: auto;
-        height: 700px;
-    }
-
-    .footer-link {
-
-        p {
-            font-size: 14px;
-        }
-    }
-
-    .footer-header {
-        font-size: 24px;
-    }
 }

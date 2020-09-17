@@ -159,9 +159,7 @@ p {
 }
 
 .hero {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 963px;
 }
 
 .hero .hero-img {
@@ -170,7 +168,7 @@ p {
 
 .section-img {
   position: absolute;
-  top: 92vh;
+  bottom: 15px;
   left: 0;
   width: 100%;
 }

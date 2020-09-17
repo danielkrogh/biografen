@@ -318,7 +318,7 @@ main {
   }
   .section-border {
     position: absolute;
-    top: 370px;
+    top: 360px;
     z-index: 10;
   }
   .section-border img {

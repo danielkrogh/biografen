@@ -2,7 +2,6 @@
   width: 80%;
   max-width: 1200px;
   margin: auto;
-  padding-top: 140px;
 }
 
 #order h1, #order h2 {
@@ -25,6 +24,12 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 2rem;
+}
+
+#order #order-container #buy-tickets #date-container #dates .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #order #order-container #buy-tickets #payment-container {

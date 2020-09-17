@@ -6,7 +6,6 @@ $black: #343434;
     width: 80%;
     max-width: 1200px;
     margin: auto;
-    padding-top: 140px;
 
     h1, h2 {
         text-transform: uppercase;
@@ -26,6 +25,17 @@ $black: #343434;
         margin-top: 2rem;
 
         #buy-tickets {
+
+            #date-container {
+
+                #dates {
+
+                    .row {
+                        display: flex;
+                        
+                    }
+                }
+            }
         
             #payment-container {
                 display: flex;

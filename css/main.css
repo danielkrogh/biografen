@@ -213,12 +213,11 @@ p {
 .section-border {
   position: absolute;
   top: 863px;
-  z-index: 10;
+  height: auto;
 }
 
 .section-border img {
   width: 100%;
-  height: 100%s;
 }
 
 .highlight-section {
@@ -315,7 +314,7 @@ p {
   }
   .section-border {
     position: absolute;
-    top: 360px;
+    top: 370px;
     z-index: 10;
   }
   .section-border img {

@@ -1,7 +1,8 @@
-let aarAction = [
+let arrAction = [
     {   
         image: 'Poster-Trash',
-        trailer: '',
+        trailer: 'Citizenfour.mp4',
+        id: '0',
         time: '116',
         bio: '1',
         cate: 'børn',
@@ -9,18 +10,30 @@ let aarAction = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
-        image: 'Poster-Trash',
-        trailer: '',
+        image: 'Poster-Citizenfour',
+        trailer: 'Citizenfour.mp4',
+        id: '1',
         time: '116',
-        bio: '1',
+        bio: '2',
         cate: 'børn',
         actor:'John doe',
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
         image: 'Poster-Trash',
-        trailer: '',
-        time: '116',
+        trailer: 'Citizenfour.mp4',
+        id: '2',
+        time: '55',
+        bio: '3',
+        cate: 'børn',
+        actor:'John doe',
+        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
+    },
+    {   
+        image: 'Poster-Trash',
+        trailer: 'Citizenfour.mp4',
+        id: '3',
+        time: '34',
         bio: '1',
         cate: 'børn',
         actor:'John doe',
@@ -31,7 +44,18 @@ let aarAction = [
 let arrDrama = [
     {   
         image: 'Poster-Trash',
-        trailer: '',
+        trailer: 'Citizenfour.mp4',
+        id: '3',
+        time: '116',
+        bio: '2',
+        cate: 'børn',
+        actor:'John doe',
+        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
+    },
+    {   
+        image: 'Poster-Trash',
+        trailer: 'Citizenfour.mp4',
+        id: '4',
         time: '116',
         bio: '1',
         cate: 'børn',
@@ -40,18 +64,10 @@ let arrDrama = [
     },
     {   
         image: 'Poster-Trash',
-        trailer: '',
+        trailer: 'Citizenfour.mp4',
+        id: '5',
         time: '116',
-        bio: '1',
-        cate: 'børn',
-        actor:'John doe',
-        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
-    },
-    {   
-        image: 'Poster-Trash',
-        trailer: '',
-        time: '116',
-        bio: '1',
+        bio: '3',
         cate: 'børn',
         actor:'John doe',
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
@@ -60,7 +76,8 @@ let arrDrama = [
 let arrBørn = [
     {   
         image: 'Poster-Trash',
-        trailer: '',
+        trailer: 'Citizenfour.mp4',
+        id: '6',
         time: '116',
         bio: '1',
         cate: 'børn',
@@ -69,7 +86,18 @@ let arrBørn = [
     },
     {   
         image: 'Poster-Trash',
-        trailer: '',
+        trailer: 'Citizenfour.mp4',
+        id: '7',
+        time: '116',
+        bio: '2',
+        cate: 'børn',
+        actor:'John doe',
+        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
+    },
+    {   
+        image: 'Poster-Trash',
+        trailer: 'Citizenfour.mp4',
+        id: '8',
         time: '116',
         bio: '1',
         cate: 'børn',
@@ -78,18 +106,10 @@ let arrBørn = [
     },
     {   
         image: 'Poster-Trash',
-        trailer: '',
+        trailer: 'Citizenfour.mp4',
+        id: '9',
         time: '116',
-        bio: '1',
-        cate: 'børn',
-        actor:'John doe',
-        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
-    },
-    {   
-        image: 'Poster-Trash',
-        trailer: '',
-        time: '116',
-        bio: '1',
+        bio: '3',
         cate: 'børn',
         actor:'John doe',
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 

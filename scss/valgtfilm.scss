@@ -1,0 +1,20 @@
+.film-sec { 
+    display: flex;
+    padding: 10%;
+    .poster-container{
+        margin-right: 120px;
+        .poster {
+            width: 90%;
+        }
+    }
+}
+.trailer-sec {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .video-source {
+        width: 80%;
+        height: auto;
+    }
+}
+

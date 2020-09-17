@@ -152,15 +152,15 @@ p {
 
 // HERO --------------------------------------------------------------------------------
 .hero {
-    height: 963px;
-    .hero-img {
-        width: 100%;
-    }
+    height: 100vh;
+    background-image: url(/img/Biografen_Grand_Stockholm.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .section-img {
     position: absolute;
-    bottom: 15px;
+    bottom: -1px;
     left: 0;
     width: 100%;
 }
@@ -302,11 +302,6 @@ p {
 
     .hero {
         height: 375px;
-        .hero-img {
-            width: 375px;
-            height: 375px;
-            overflow: hidden;
-        }
     }
 
     .section-img {

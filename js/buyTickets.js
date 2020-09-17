@@ -207,3 +207,52 @@ function occupySeats() {
         document.querySelector('.screen').style.backgroundImage = `url(/img/Poster-${localStorage.getItem('movieTitle')}.jpg)`;
     }
 }
+
+
+
+
+document.querySelector('#buy-btn a').addEventListener('click', () => {
+    document.querySelector('#order-container').classList.remove('middle')
+    document.querySelector('#order-container').classList.add('hide-left')
+
+    document.querySelector('#order-info').classList.remove('hide-right')
+    document.querySelector('#order-info').classList.add('middle')
+
+    setOrder();
+})
+
+
+
+
+let selectedMovie = document.querySelector('#movie');
+let date = document.querySelector('#date');
+let ticketOld = document.querySelector('#ticket-old');
+let ticketAdult = document.querySelector('#ticket-adult');
+let ticketYoung = document.querySelector('#ticket-young');
+let places = document.querySelector('#places');
+let finalDiscount = document.querySelector('#discount');
+let totalPrice = document.querySelector('#total-price');
+
+function setOrder() {
+    selectedMovie.innerHTML = localStorage.getItem('movieTitle')
+    date.innerHTML = document.querySelector('.active').innerHTML;
+    ticketOld.innerHTML = document.querySelector('#tickets > div:nth-of-type(1) .quantity').innerHTML;
+    ticketAdult.innerHTML = document.querySelector('#tickets > div:nth-of-type(2) .quantity').innerHTML;
+    ticketYoung.innerHTML = document.querySelector('#tickets > div:nth-of-type(3) .quantity').innerHTML;
+
+    JSON.parse(localStorage.getItem('selectedSeats')).forEach(number => {
+        places.innerHTML += number + ', ';
+    })
+
+    finalDiscount.innerHTML = 100 - discount * 100 + '%';
+    totalPrice.innerHTML = total.innerHTML + ' kr.';
+}
+
+
+
+window.addEventListener('load', () => {
+    document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
+})
+window.addEventListener('resize', () => {
+    document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
+})

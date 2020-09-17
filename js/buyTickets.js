@@ -172,17 +172,36 @@ function allSelected() {
 }
 
 
+let dates = document.querySelectorAll('.date-row p');
+const currentDate = JSON.parse(localStorage.getItem('occupiedSeats'));
+let datesOccupied = [currentDate, [13,14], [15,16], [17,18], [19,20], [21,22]]
+
+dates[0].classList.add('active');
+
+dates.forEach(date => date.addEventListener('click', () => {
+    dates.forEach(date => date.classList.remove('active'));
+    date.classList.add('active');
+
+    let clickedIndex = Array.from(dates).indexOf(date);
+    localStorage.setItem('occupiedSeats', JSON.stringify(datesOccupied[clickedIndex]));
+    allSelected();
+}))
+
+
+populateUI();
+updateSelectedCount();
+calculatePrice();
+occupySeats();
+allSelected();
+
+
 function occupySeats() {
     let occupiedSeats = JSON.parse(localStorage.getItem("occupiedSeats"));
 
-    occupiedSeats.forEach(elm => seats[elm].classList.add('occupied'));
+    if (occupiedSeats) {
+        occupiedSeats.forEach(elm => seats[elm].classList.add('occupied'));
 
-    document.querySelector('#order h1').innerHTML = `Køb billetter til ${localStorage.getItem('movieTitle')} her`;
+        document.querySelector('#order h1').innerHTML = `Køb billetter til ${localStorage.getItem('movieTitle')} her`;
+        document.querySelector('#movie-img img').src = `img/Poster-${localStorage.getItem('movieTitle')}.jpg`
+    }
 }
-
-
-occupySeats();
-populateUI();
-allSelected();
-updateSelectedCount();
-calculatePrice();

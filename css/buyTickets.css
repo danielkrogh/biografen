@@ -10,6 +10,9 @@
 
 #order h2 {
   font-size: 30px;
+  text-align: center;
+  background-color: #343434;
+  color: #F5EFEF;
 }
 
 #order p {
@@ -26,10 +29,22 @@
   margin-top: 2rem;
 }
 
-#order #order-container #buy-tickets #date-container #dates .row {
+#order #order-container #buy-tickets #date-container {
+  margin-bottom: 1rem;
+}
+
+#order #order-container #buy-tickets #date-container #dates .date-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+#order #order-container #buy-tickets #date-container #dates .date-row p {
+  border: 1px solid #343434;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  padding: .25rem 0;
 }
 
 #order #order-container #buy-tickets #payment-container {
@@ -88,7 +103,8 @@
 }
 
 #order #order-container #buy-tickets #buy-btn {
-  margin: 1rem 0;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 #order #order-container #buy-tickets #buy-btn a {
@@ -96,8 +112,11 @@
   text-transform: uppercase;
   color: #F5EFEF;
   background-color: #931A25;
-  padding: .5rem 1rem;
+  padding: .5rem 0;
   font-weight: 700;
+  width: 100%;
+  display: block;
+  text-align: center;
 }
 
 #order #order-container #buy-tickets #coupon {
@@ -215,7 +234,8 @@
 #order #order-container #select-seats .showcase {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 5px 10px;
-  border-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   color: #777777;
   list-style-type: none;
   display: -webkit-box;
@@ -253,4 +273,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+#order #order-container #select-seats .screen {
+  background-color: #343434;
+  height: 150px;
+  width: 100%;
+  margin: .5rem 0;
+  -webkit-transform: rotateX(60deg);
+          transform: rotateX(60deg);
+  -webkit-box-shadow: 0px -5px 10px 2px #343434;
+          box-shadow: 0px -5px 10px 2px #343434;
+}
+
+.active {
+  background-color: #52C78E;
 }

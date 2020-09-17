@@ -2,6 +2,8 @@ $red: #931A25;
 $white: #F5EFEF;
 $black: #343434;
 
+$selected-seats: #52C78E;
+
 #order {
     width: 80%;
     max-width: 1200px;
@@ -13,6 +15,9 @@ $black: #343434;
 
     h2 {
         font-size: 30px;
+        text-align: center;
+        background-color: $black;
+        color: $white;
     }
 
     p {
@@ -27,12 +32,20 @@ $black: #343434;
         #buy-tickets {
 
             #date-container {
+                margin-bottom: 1rem;
 
                 #dates {
 
-                    .row {
+                    .date-row {
                         display: flex;
                         
+                        p {
+                            border: 1px solid $black;
+                            cursor: pointer;
+                            width: 50%;
+                            text-align: center;
+                            padding: .25rem 0;
+                        }
                     }
                 }
             }
@@ -80,15 +93,19 @@ $black: #343434;
             }
         
             #buy-btn {
-                margin: 1rem 0;
+                margin-top: 1rem;
+                width: 100%;
         
                 a {
                     text-decoration: none;
                     text-transform: uppercase;
-                    color: $white;
-                    background-color: $red;
-                    padding: .5rem 1rem;
+                    color: #F5EFEF;
+                    background-color: #931A25;
+                    padding: .5rem 0;
                     font-weight: 700;
+                    width: 100%;
+                    display: block;
+                    text-align: center;
                 }
             }
         
@@ -146,7 +163,6 @@ $black: #343434;
             $general-white-color: black;
             $background-color: #242333;
             $standard-seat-color: #444451;
-            $selected-seats: #52C78E;
             $occupied-seats: #C75252;
             $box-shadow-color: rgba(255, 255, 255, 0.7);
             $showcase-color: rgba(0, 0, 0, 0.1);
@@ -205,7 +221,8 @@ $black: #343434;
             .showcase {
                 background-color: $showcase-color;
                 padding: 5px 10px;
-                border-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-bottom-left-radius: 5px;
                 color: $showcase-col;
                 list-style-type: none;
                 display: flex;
@@ -231,6 +248,21 @@ $black: #343434;
             .row {
                 display: flex;
             }
+
+            .screen {
+                background-color: $black;
+                height: 150px;
+                width: 100%;
+                margin: .5rem 0;
+                transform: rotateX(60deg);
+                box-shadow: 0px -5px 10px 2px $black;
+            }
         }
     }
+}
+
+
+
+.active {
+    background-color: $selected-seats;
 }

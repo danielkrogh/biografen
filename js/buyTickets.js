@@ -295,5 +295,5 @@ document.querySelector('#input-phone').addEventListener('keyup', () => {
 
 
 document.querySelector('#order-btn').addEventListener('click', () => {
-    window.location.href = '/thanks.html';
+    window.location.href = './thanks.html';
 })

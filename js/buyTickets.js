@@ -249,6 +249,7 @@ function setOrder() {
     ticketAdult.innerHTML = document.querySelector('#tickets > div:nth-of-type(2) .quantity').innerHTML;
     ticketYoung.innerHTML = document.querySelector('#tickets > div:nth-of-type(3) .quantity').innerHTML;
 
+    places.innerHTML = '';
     let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
     selectedSeats.forEach(number => {
         

@@ -12,33 +12,33 @@ const orderBtn = document.querySelector('.orderBtn')
 // Run first array => arrType(arr = images)
 // hide first Btn
 arrType()
-action.style.backgroundColor = '#fff'
+/* action.style.backgroundColor = '#fff'
 drama.style.backgroundColor = '#fff'
-børn.style.backgroundColor = '#fff'
+børn.style.backgroundColor = '#fff' */
 
 action.addEventListener('click', () => {
     // Remove btn after click
-    drama.style.backgroundColor = '#fff'
+    /* drama.style.backgroundColor = '#fff'
     action.style.backgroundColor = '#44a5bb'
-    børn.style.backgroundColor = '#fff'
+    børn.style.backgroundColor = '#fff' */
     removeContainerChildren()
     arrType(aarAction)
     movieDesc(arrBørn)
 })
 drama.addEventListener('click', () => {
     // Remove btn after click
-   action.style.backgroundColor = '#fff'
+   /* action.style.backgroundColor = '#fff'
    drama.style.backgroundColor = '#44a5bb'
-   børn.style.backgroundColor = '#fff'
+   børn.style.backgroundColor = '#fff' */
    removeContainerChildren()
    arrType(arrDrama)
    movieDesc(arrDrama)
 })
 børn.addEventListener('click', () => {
     // Remove btn after click
-   action.style.backgroundColor = '#fff'
+   /* action.style.backgroundColor = '#fff'
    drama.style.backgroundColor = '#fff'
-   børn.style.backgroundColor = '#44a5bb'
+   børn.style.backgroundColor = '#44a5bb' */
    removeContainerChildren()
    arrType(arrBørn)
    movieDesc(arrBørn)
@@ -104,7 +104,7 @@ function arrType(arr = arrAction) {
     productContainer.appendChild(card)
     card.appendChild(img)
     orderBtn.appendChild(anchor)
-    productContainer.appendChild(orderBtn)
+    card.appendChild(orderBtn)
     sliderContainer.appendChild(productContainer)
     
     }

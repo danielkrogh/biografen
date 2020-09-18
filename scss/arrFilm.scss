@@ -3,15 +3,14 @@
 
 .sliderContainer {
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: auto;
+    gap: 5%;
     width: 100%;
-    gap: 20px;
-    margin: 20px;
     img {
         z-index: -1;
         height: auto;
-        width: 200px;
+        width: 350px;
         object-fit: cover;
         overflow: hidden;
         opacity: 1;
@@ -19,16 +18,24 @@
     .productContainer {
         justify-content: center;
         align-items: center;
+        .orderBtn {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #931A25;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            .anchor,
+            .anchor:link,
+            .anchor:visited {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
         .card {
             display: inline-block;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 15px;
-            }
-            .product {
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
             .text {
                 text-align: center; 
@@ -49,3 +56,31 @@
             }
     }
 }
+
+
+.btn-container {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    .filter-btn {
+        display: block;
+            width: 10%;
+            margin: 20px;
+            border: none;
+            background-color: #343434;
+            padding: 8px 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            .anchor,
+            .anchor:link,
+            .anchor:visited {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+}        

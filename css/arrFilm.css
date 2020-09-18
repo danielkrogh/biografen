@@ -1,19 +1,18 @@
 .sliderContainer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(100px, 1fr))[3];
-      grid-template-columns: repeat(3, minmax(100px, 1fr));
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   -ms-grid-rows: auto;
       grid-template-rows: auto;
+  gap: 5%;
   width: 100%;
-  gap: 20px;
-  margin: 20px;
 }
 
 .sliderContainer img {
   z-index: -1;
   height: auto;
-  width: 200px;
+  width: 350px;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
@@ -29,23 +28,26 @@
           align-items: center;
 }
 
-.sliderContainer .productContainer .card {
-  display: inline-block;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 15px;
+.sliderContainer .productContainer .orderBtn {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #931A25;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
 }
 
-.sliderContainer .productContainer .product {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.sliderContainer .productContainer .orderBtn .anchor,
+.sliderContainer .productContainer .orderBtn .anchor:link,
+.sliderContainer .productContainer .orderBtn .anchor:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sliderContainer .productContainer .card {
+  display: inline-block;
 }
 
 .sliderContainer .productContainer .text {
@@ -68,4 +70,39 @@
   font-weight: 600;
   margin: 0;
   text-transform: capitalize;
+}
+
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-container .filter-btn {
+  display: block;
+  width: 10%;
+  margin: 20px;
+  border: none;
+  background-color: #343434;
+  padding: 8px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-container .filter-btn .anchor,
+.btn-container .filter-btn .anchor:link,
+.btn-container .filter-btn .anchor:visited {
+  color: #fff;
+  text-decoration: none;
 }

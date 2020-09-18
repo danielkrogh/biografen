@@ -5,12 +5,71 @@
   padding: 10%;
 }
 
+.film-sec .desc-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20% 0;
+}
+
+.film-sec .desc-container .post-title {
+  margin-bottom: 15px;
+  font-size: 25px;
+  color: #931A25;
+  text-transform: uppercase;
+}
+
 .film-sec .poster-container {
   margin-right: 120px;
 }
 
 .film-sec .poster-container .poster {
-  width: 90%;
+  width: 250px;
+}
+
+.film-sec .poster-container .btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.film-sec .poster-container .btn-container .order-btn {
+  display: block;
+  width: 100%;
+  border: solid grey 1px;
+  background-color: #931A25;
+  padding: 4px 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+}
+
+.film-sec .poster-container .btn-container .order-btn a,
+.film-sec .poster-container .btn-container .order-btn a:link,
+.film-sec .poster-container .btn-container .order-btn a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.film-sec .poster-container .btn-container .btn-right {
+  background-color: #fff;
+}
+
+.film-sec .poster-container .btn-container .btn-right a,
+.film-sec .poster-container .btn-container .btn-right a:link,
+.film-sec .poster-container .btn-container .btn-right a:visited {
+  color: #333;
+  text-decoration: none;
 }
 
 .trailer-sec {
@@ -26,7 +85,29 @@
           flex-direction: column;
 }
 
-.trailer-sec .video-source {
+.trailer-sec .trailer-title {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+
+.trailer-sec .trailer-title::after {
+  display: block;
+  content: '';
+  width: 250px;
+  height: 2px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  left: -25%;
+}
+
+.trailer-sec .trailer-title .video-source {
   width: 80%;
   height: auto;
 }

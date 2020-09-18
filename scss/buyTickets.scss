@@ -291,7 +291,7 @@ $selected-seats: #52C78E;
         display: flex;
         justify-content: space-around;
 
-        div {
+        > div {
 
             &:first-of-type {
 
@@ -338,8 +338,35 @@ $selected-seats: #52C78E;
             }
 
             &:last-of-type {
+                width: 400px;
 
-                #movie {
+                .info-container {
+                    margin: 1rem 0;
+
+                    &:first-of-type {
+                        margin-top: 0.5rem;
+                    }
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    > div {
+                        display: flex;
+                        justify-content: space-between;
+                        border-bottom: 1px solid $black;
+
+                        &:first-of-type {
+                            border-top: 2px solid $black;
+                        }
+
+                        &:last-of-type {
+                            border-bottom: 2px solid $black;
+                        }
+                    }
+                }
+
+                #name, #movie {
                     text-transform: capitalize;
                 }
             }

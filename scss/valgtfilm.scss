@@ -1,0 +1,84 @@
+.film-sec { 
+    display: flex;
+    padding: 10%;
+    .desc-container {
+        align-items: center;
+        padding: 20% 0;
+        .post-title {
+            margin-bottom: 15px;
+            font-size: 25px;
+            color: #931A25;
+            text-transform: uppercase;
+        }
+    }
+    .poster-container{
+        margin-right: 120px;
+        .poster {
+            width: 250px;
+        }
+        .btn-container {
+            display: flex;
+            margin-top: 15px;
+            justify-content: center;
+            align-items: center;
+            .order-btn {
+                display: block;
+                    width: 100%;
+                    border: solid grey 1px;
+                    background-color: #931A25;
+                    padding: 4px 10px;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    color: #fff;
+                    font-weight: 500;
+                    cursor: pointer;
+                    text-align: center;
+                    a,
+                    a:link,
+                    a:visited {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+                .btn-right {
+                    background-color: #fff;
+                    a,
+                    a:link,
+                    a:visited {
+                        color: #333;
+                        text-decoration: none;
+                    }
+                }
+        }        
+    }
+}
+.trailer-sec {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .trailer-title {
+        position: relative;
+        display: flex;
+        text-transform: uppercase;
+        font-size: 42px;
+        font-weight: bolder;
+        margin-bottom: 15px;
+        &::after {
+            display: block;
+            content: '';
+            width: 250px;
+            height: 2px;
+            background: black;
+            position: absolute;
+            bottom: 0;
+            left: -25%;
+        }
+        .video-source {
+            width: 80%;
+            height: auto;
+        }
+    } 
+}
+    
+
+

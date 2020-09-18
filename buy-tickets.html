@@ -119,9 +119,7 @@
                         </div>
                     </div>
 
-                    <div id="buy-btn">
-                        <a href="#">Videre</a>
-                    </div>
+                    <button id="buy-btn">videre</button>
                 </article>
         
                 <article id="select-seats">
@@ -288,16 +286,24 @@
                 <div>
                     <h2>Oplysninger</h2>
                     <form action="javascript:void(0);">
-                        <input type="text" name="" id="" placeholder="fornavn">
-                        <input type="text" name="" id="" placeholder="efternavn">
-                        <input type="text" name="" id="" placeholder="email">
-                        <input type="text" name="" id="" placeholder="tlf">
-                        <button>bestil</button>
+                        <div>
+                            <input type="text" name="" id="input-first-name" placeholder="fornavn">
+                            <input type="text" name="" id="input-last-name" placeholder="efternavn">                            
+                        </div>
+                        <div>
+                            <input type="text" name="" id="input-email" placeholder="email">
+                            <input type="text" name="" id="input-phone" placeholder="tlf">
+                        </div>
+                        <button id="order-btn">bestil</button>
                     </form>
+                    <p id="tilbage">tilbage</p>
                 </div>
                 <div>
                     <h2>Bestilling</h2>
                     <div>
+                        <p>Navn: <span id="name"></span></p>
+                        <p>Email: <span id="email"></span></p>
+                        <p>Tlf: <span id="phone"></span></p>
                         <p>Film: <span id="movie"></span></p>
                         <p>Dato: <span id="date"></span></p>
                         <p>Senior billetter: <span id="ticket-old"></span></p>

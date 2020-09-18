@@ -8,6 +8,7 @@ $selected-seats: #52C78E;
     width: 80%;
     max-width: 1200px;
     margin: auto;
+    padding-top: 140px;
 
     h1, h2 {
         text-transform: uppercase;
@@ -107,18 +108,14 @@ $selected-seats: #52C78E;
             #buy-btn {
                 margin-top: 1rem;
                 width: 100%;
-        
-                a {
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    color: #F5EFEF;
-                    background-color: #931A25;
-                    padding: .5rem 0;
-                    font-weight: 700;
-                    width: 100%;
-                    display: block;
-                    text-align: center;
-                }
+                cursor: pointer;
+                border: none;
+                color: $white;
+                background-color: $red;
+                text-transform: uppercase;
+                font-weight: 700;
+                padding: .5rem 1rem;
+                outline: none;
             }
         
             #coupon {
@@ -301,6 +298,42 @@ $selected-seats: #52C78E;
                 form {
                     display: flex;
                     flex-direction: column;
+
+                    div {
+
+                        &:first-of-type {
+
+                            input {
+                                margin: 0;
+                                border-top: none;
+                            }
+                        }
+                    }
+
+                    input {
+                        margin: 1rem 0;
+                        outline: none;
+                        border: 1px solid $black;
+                        padding: 0.25rem;
+                        text-transform: uppercase;
+                        height: 24px;
+                        font-size: 16px;
+
+                        &::-webkit-input-placeholder {
+                            color: $black;
+                        }
+                    }
+
+                    button {
+                        cursor: pointer;
+                        border: none;
+                        color: $white;
+                        background-color: $red;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        padding: .5rem 1rem;
+                        outline: none;
+                    }
                 }
             }
 

@@ -162,6 +162,7 @@ function allSelected() {
         document.querySelectorAll('.row .seat.selected').forEach(seat => {
             seat.classList.remove('selected')
         })
+        localStorage.removeItem('selectedSeats')
         occupySeats();
     } else {
         document.querySelectorAll('.row .seat:not(.selected)').forEach(seat => {
@@ -211,7 +212,7 @@ function occupySeats() {
 
 
 
-document.querySelector('#buy-btn a').addEventListener('click', () => {
+document.querySelector('#buy-btn').addEventListener('click', () => {
     document.querySelector('#order-container').classList.remove('middle')
     document.querySelector('#order-container').classList.add('hide-left')
 
@@ -219,6 +220,14 @@ document.querySelector('#buy-btn a').addEventListener('click', () => {
     document.querySelector('#order-info').classList.add('middle')
 
     setOrder();
+})
+
+document.querySelector('#tilbage').addEventListener('click', () => {
+    document.querySelector('#order-container').classList.remove('hide-left')
+    document.querySelector('#order-container').classList.add('middle')
+
+    document.querySelector('#order-info').classList.remove('middle')
+    document.querySelector('#order-info').classList.add('hide-right')
 })
 
 
@@ -240,8 +249,16 @@ function setOrder() {
     ticketAdult.innerHTML = document.querySelector('#tickets > div:nth-of-type(2) .quantity').innerHTML;
     ticketYoung.innerHTML = document.querySelector('#tickets > div:nth-of-type(3) .quantity').innerHTML;
 
-    JSON.parse(localStorage.getItem('selectedSeats')).forEach(number => {
-        places.innerHTML += number + ', ';
+    let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    selectedSeats.forEach(number => {
+        
+        if (Array.from(selectedSeats).indexOf(number) + 1 == selectedSeats.length) {
+            places.innerHTML += number;
+        } else if (Array.from(selectedSeats).indexOf(number) + 1 == selectedSeats.length - 1) {
+            places.innerHTML += number + ' & ';
+        } else {
+            places.innerHTML += number + ', ';
+        }
     })
 
     finalDiscount.innerHTML = 100 - discount * 100 + '%';
@@ -255,4 +272,27 @@ window.addEventListener('load', () => {
 })
 window.addEventListener('resize', () => {
     document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
+})
+
+
+
+document.querySelector('#input-first-name').addEventListener('keyup', () => {
+    document.querySelector('#name').innerHTML = document.querySelector('#input-first-name').value + ' ' + document.querySelector('#input-last-name').value;
+})
+
+document.querySelector('#input-last-name').addEventListener('keyup', () => {
+    document.querySelector('#name').innerHTML = document.querySelector('#input-first-name').value + ' ' + document.querySelector('#input-last-name').value;
+})
+
+document.querySelector('#input-email').addEventListener('keyup', () => {
+    document.querySelector('#email').innerHTML = document.querySelector('#input-email').value;
+})
+
+document.querySelector('#input-phone').addEventListener('keyup', () => {
+    document.querySelector('#phone').innerHTML = document.querySelector('#input-phone').value;
+})
+
+
+document.querySelector('#order-btn').addEventListener('click', () => {
+    window.location.href = '/thanks.html';
 })

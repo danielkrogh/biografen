@@ -1,0 +1,98 @@
+body {
+  background-color: #F5EFEF;
+}
+
+#contact {
+  padding-top: 120px;
+}
+
+#contact section:first-of-type {
+  width: 80%;
+  max-width: 1200px;
+  margin: 5rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#contact section:first-of-type article {
+  width: 50%;
+}
+
+#contact section:first-of-type article:first-of-type {
+  margin-right: 5rem;
+}
+
+#contact section:first-of-type article:last-of-type {
+  margin-left: 5rem;
+}
+
+#contact section:first-of-type article h1 {
+  text-transform: uppercase;
+  color: #931A25;
+}
+
+#contact section:first-of-type article form {
+  background-color: #fff;
+  padding: 2rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+#contact section:first-of-type article form input, #contact section:first-of-type article form textarea {
+  margin-bottom: 1rem;
+  padding: 1rem 0 1rem 1rem;
+  text-transform: uppercase;
+  border-radius: 15px;
+  outline: none;
+  border: 1px solid #343434;
+}
+
+#contact section:first-of-type article form input::-webkit-input-placeholder, #contact section:first-of-type article form textarea::-webkit-input-placeholder {
+  color: #343434;
+}
+
+#contact section:first-of-type article form button {
+  cursor: pointer;
+  border: none;
+  color: #F5EFEF;
+  background-color: #931A25;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .5rem 1rem;
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact section:first-of-type {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 2rem auto;
+  }
+  #contact section:first-of-type article {
+    width: 100%;
+  }
+  #contact section:first-of-type article:first-of-type {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  #contact section:first-of-type article:last-of-type {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}

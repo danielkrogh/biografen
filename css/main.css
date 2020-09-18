@@ -20,6 +20,10 @@ p {
   font-size: 16px;
 }
 
+button {
+  cursor: pointer;
+}
+
 .hero {
   height: 100vh;
   background-image: url(/img/Biografen_Grand_Stockholm.png);

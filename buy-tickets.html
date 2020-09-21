@@ -285,16 +285,17 @@
             <section id="order-info" class="hide-right">
                 <div>
                     <h2>Oplysninger</h2>
-                    <form action="javascript:void(0);">
-                        <div>
-                            <input type="text" name="" id="input-first-name" placeholder="fornavn">
-                            <input type="text" name="" id="input-last-name" placeholder="efternavn">                            
-                        </div>
-                        <div>
-                            <input type="text" name="" id="input-email" placeholder="email">
-                            <input type="text" name="" id="input-phone" placeholder="tlf">
-                        </div>
+                    <form novalidate action="javascript:void(0);">
+                        <!-- <div> -->
+                            <input type="text" id="input-first-name" placeholder="fornavn">
+                            <input type="text" id="input-last-name" placeholder="efternavn">                            
+                        <!-- </div>
+                        <div> -->
+                            <input type="email" id="email-address" placeholder="email">
+                            <input type="tel" id="input-phone" placeholder="tlf">
+                        <!-- </div> -->
                         <button id="order-btn">bestil</button>
+                        <div id="message"></div>
                     </form>
                     <p id="tilbage">tilbage</p>
                 </div>
@@ -308,7 +309,7 @@
                             </div>
                             <div>
                                 <p>Email:</p>
-                                <span id="email"></span>
+                                <span id="display-email"></span>
                             </div>
                             <div>
                                 <p>Tlf:</p>
@@ -409,5 +410,6 @@
     <script src="./js/script.js"></script>
     <script src="./js/nav.js"></script>
     <script src="./js/buyTickets.js"></script>
+    <script src="./js/inputVal.js"></script>
 </body>
 </html>

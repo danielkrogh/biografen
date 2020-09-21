@@ -292,6 +292,7 @@ $selected-seats: #52C78E;
         justify-content: space-around;
 
         > div {
+            width: 400px;
 
             &:first-of-type {
 
@@ -311,7 +312,7 @@ $selected-seats: #52C78E;
                     }
 
                     input {
-                        margin: 1rem 0;
+                        margin-top: 0.5rem;
                         outline: none;
                         border: 1px solid $black;
                         padding: 0.25rem;
@@ -333,12 +334,12 @@ $selected-seats: #52C78E;
                         font-weight: 700;
                         padding: .5rem 1rem;
                         outline: none;
+                        margin-top: 0.5rem;
                     }
                 }
             }
 
             &:last-of-type {
-                width: 400px;
 
                 .info-container {
                     margin: 1rem 0;
@@ -423,4 +424,10 @@ body {
     #movie-img img {
         width: 100%;
     }
+}
+
+
+.disable-click {
+    filter: blur(3px);
+    pointer-events: none;
 }

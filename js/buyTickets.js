@@ -4,6 +4,10 @@
 let minus = document.querySelectorAll('.minus'); // Alle minus knapper
 let plus = document.querySelectorAll('.plus'); // Alle plus knapper
 let quantity = document.querySelectorAll('.quantity'); // Alle billettypers antal
+let coupon = document.querySelector('#coupon p'); // Felt der skal klikkes for at vise input
+let couponCodeInput = document.querySelector('#coupon input'); // Coupon input felt
+let couponBtn = document.querySelector('#coupon button'); // Coupon knap
+let discount = 1; // Rabat er som udgangspunkt 1. 20% rabat vil være 0.8
 
 // Billet priser
 const priceOld = 70;
@@ -34,50 +38,45 @@ plus.forEach(elm => elm.addEventListener('click', () => { // Klik på plus
 
  // Funktion til at beregne pris
 function calculatePrice() {
-    total.innerHTML = (quantity[0].innerHTML * priceOld + quantity[1].innerHTML * priceAdult + quantity[2].innerHTML * priceYoung) * discount; // Quantity ganges med pris og plusses sammen
+    total.innerHTML = (quantity[0].innerHTML * priceOld + quantity[1].innerHTML * priceAdult + quantity[2].innerHTML * priceYoung) * discount; // Quantity ganges med pris og plusses sammen. Resultat ganges med evt. rabat
 }
 
-let coupon = document.querySelector('#coupon p');
-let couponCodeInput = document.querySelector('#coupon input');
-let couponBtn = document.querySelector('#coupon button');
-let discount = 1;
-
-coupon.addEventListener('click', () => {
+coupon.addEventListener('click', () => { // Klik på 'Kupon' tekst
     let couponIcon = document.querySelector('#coupon p span');
     let form = document.querySelector('#coupon form');
 
-    form.classList.toggle('display');
+    form.classList.toggle('display'); // Toggle af klassen 'display' på coupon form
 
-    if (couponIcon.innerHTML == '+') {
+    if (couponIcon.innerHTML == '+') { // Skift af plus/minus-tegn
         couponIcon.innerHTML = '-';
     } else {
         couponIcon.innerHTML = '+';
     }
 })
 
-couponBtn.addEventListener('click', () => {
-    if (couponCodeInput.value == 20) {
-        discount = 0.8;
-        calculatePrice();
+couponBtn.addEventListener('click', () => { // Klik på indløs coupon knap 
+    if (couponCodeInput.value == 20) { // Hvis indtastet værdi er '20'
+        discount = 0.8; // Rabat sættes til 0.8 hvilket svarer til 20% rabat
+        calculatePrice(); // Pris beregnes
 
-        if (document.querySelector('#fail')) {
+        if (document.querySelector('#fail')) { // Fjern fail/success besked hvis en af disse findes
             document.querySelector('#fail').remove();
         } else if (document.querySelector('#success')) {
             document.querySelector('#success').remove();
         }
 
-        couponBtn.insertAdjacentHTML('afterend', '<p id="success">Du har fået 20% rabat.</p>')
-    } else {
-        discount = 1;
-        calculatePrice();
+        couponBtn.insertAdjacentHTML('afterend', '<p id="success">Du har fået 20% rabat.</p>') // Tilføj success besked
+    } else { // Hvis intet eller alt andet end '20' indtastet
+        discount = 1; // Rabat sættes til sdt.
+        calculatePrice(); // Pris beregnes
 
-        if (document.querySelector('#success')) {
+        if (document.querySelector('#success')) { // Fjern fail/success besked hvis en af disse findes
             document.querySelector('#success').remove();
         } else if (document.querySelector('#fail')) {
             document.querySelector('#fail').remove();
         }
 
-        couponBtn.insertAdjacentHTML('afterend', '<p id="fail">Ingen rabat til dig.</p>')
+        couponBtn.insertAdjacentHTML('afterend', '<p id="fail">Ingen rabat til dig.</p>') // Tilføj fail besked
     }
 })
 
@@ -151,11 +150,11 @@ function allSelected() {
             seat.classList.remove('occupied')
         })
         occupySeats();
-    } else if (selectedSeats.length == ticketsSelected) {
+    } else if (selectedSeats !== null && selectedSeats.length == ticketsSelected) {
         document.querySelectorAll('.row .seat:not(.selected)').forEach(seat => {
             seat.classList.add('occupied')
         })
-    } else if (selectedSeats.length > ticketsSelected) {
+    } else if (selectedSeats !== null && selectedSeats.length > ticketsSelected) {
         document.querySelectorAll('.row .seat.occupied').forEach(seat => {
             seat.classList.remove('occupied')
         })
@@ -210,6 +209,18 @@ function occupySeats() {
 }
 
 
+document.querySelector('#buy-btn').classList.add('disable-click');
+
+window.addEventListener('click', () => {
+    let ticketsSelected = Number(quantity[0].innerHTML) + Number(quantity[1].innerHTML) + Number(quantity[2].innerHTML);
+    let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    
+    if (selectedSeats !== null && selectedSeats.length == ticketsSelected) {
+        document.querySelector('#buy-btn').classList.remove('disable-click');
+    } else {
+        document.querySelector('#buy-btn').classList.add('disable-click');
+    }
+})
 
 
 document.querySelector('#buy-btn').addEventListener('click', () => {
@@ -270,6 +281,14 @@ function setOrder() {
 
 window.addEventListener('load', () => {
     document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
+    localStorage.removeItem('selectedSeats');
+    document.querySelectorAll('.row .seat.selected').forEach(seat => {
+        seat.classList.remove('selected')
+    })
+    document.querySelectorAll('.row .seat').forEach(seat => {
+        seat.classList.remove('occupied')
+    })
+    occupySeats()
 })
 window.addEventListener('resize', () => {
     document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
@@ -285,15 +304,10 @@ document.querySelector('#input-last-name').addEventListener('keyup', () => {
     document.querySelector('#name').innerHTML = document.querySelector('#input-first-name').value + ' ' + document.querySelector('#input-last-name').value;
 })
 
-document.querySelector('#input-email').addEventListener('keyup', () => {
-    document.querySelector('#email').innerHTML = document.querySelector('#input-email').value;
+document.querySelector('#email-address').addEventListener('keyup', () => {
+    document.querySelector('#display-email').innerHTML = document.querySelector('#email-address').value;
 })
 
 document.querySelector('#input-phone').addEventListener('keyup', () => {
     document.querySelector('#phone').innerHTML = document.querySelector('#input-phone').value;
-})
-
-
-document.querySelector('#order-btn').addEventListener('click', () => {
-    window.location.href = './thanks.html';
 })

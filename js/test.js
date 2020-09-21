@@ -63,8 +63,13 @@ function removeContainerChildren() {
 // arr bestemes af hvilken btn der trykkes
 function arrType(arr = arrAction) {
     for (element of arr) {
-        if(element.bio == 3) {
-               /* create elements and add classes*/
+
+        let filterArr = arr.filter(function(arr) {
+            if (arr.id = 1) {}
+            return arr.id ;
+        });
+        console.log(filterArr)
+    /* create elements and add classes*/
     let productContainer = document.createElement('div')
     productContainer.classList.add('productContainer')
 
@@ -124,10 +129,6 @@ function arrType(arr = arrAction) {
     productContainer.appendChild(orderBtn)
     sliderContainer.appendChild(productContainer)
     
-    }
-        else {
-            console.log('fail')
-        }
      
 }
 }

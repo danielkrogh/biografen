@@ -106,3 +106,7 @@
   color: #fff;
   text-decoration: none;
 }
+
+.btn-container .filter-btn:focus {
+  background-color: #931A25;
+}

@@ -58,12 +58,12 @@
                     Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
             </article>
             <article>
-                <form action="javascript:void(0);">
-                    <input type="text" placeholder="navn">
-                    <input type="text" placeholder="email">
-                    <input type="text" placeholder="dd.mm.yyyy">
-                    <input type="text" placeholder="kodeord">
-                    <button>send</button>
+                <form novalidate action="javascript:void(0);">
+                    <input type="text" id="full-name" placeholder="navn">
+                    <input type="email" id="email-address" placeholder="email">
+                    <input type="password" id="password" placeholder="kodeord">
+                    <button id="send-btn">send</button>
+                    <div id="message"></div>
                 </form>
             </article>
         </section>
@@ -120,5 +120,6 @@
 
     <script src="/js/script.js"></script>
     <script src="/js/nav.js"></script>
+    <script src="./js/inputVal.js"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@ body {
                     box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
 
                     input, textarea {
-                        margin-bottom: 1rem;
+                        margin-top: 1rem;
                         padding: 1rem 0 1rem 1rem;
                         text-transform: uppercase;
                         border-radius: 15px;
@@ -52,6 +52,13 @@ body {
 
                         &::-webkit-input-placeholder {
                             color: $black;
+                        }
+                    }
+
+                    input {
+
+                        &:first-of-type {
+                            margin-top: 0;
                         }
                     }
 
@@ -64,6 +71,7 @@ body {
                         font-weight: 700;
                         padding: .5rem 1rem;
                         outline: none;
+                        margin-top: 1rem;
                     }
                 }
             }

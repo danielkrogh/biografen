@@ -320,6 +320,10 @@
       justify-content: space-around;
 }
 
+#order #order-info > div {
+  width: 400px;
+}
+
 #order #order-info > div:first-of-type form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -336,7 +340,7 @@
 }
 
 #order #order-info > div:first-of-type form input {
-  margin: 1rem 0;
+  margin-top: 0.5rem;
   outline: none;
   border: 1px solid #343434;
   padding: 0.25rem;
@@ -358,10 +362,7 @@
   font-weight: 700;
   padding: .5rem 1rem;
   outline: none;
-}
-
-#order #order-info > div:last-of-type {
-  width: 400px;
+  margin-top: 0.5rem;
 }
 
 #order #order-info > div:last-of-type .info-container {
@@ -445,4 +446,10 @@ body {
   #movie-img img {
     width: 100%;
   }
+}
+
+.disable-click {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  pointer-events: none;
 }

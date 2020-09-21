@@ -4,14 +4,23 @@ const drama = document.querySelector('.drama')
 const action = document.querySelector('.action')
 const børn = document.querySelector('.børn')
 const orderBtn = document.querySelector('.orderBtn')
-const pickBio = document.querySelector('.input-bio')
 
 //const portal = document.querySelector('.portal')
+const select = document.querySelector('.selector');
+const option = document.querySelectorAll('option')
 
+select.addEventListener('click', function() {
+    let selected = document.querySelector('.selector').selectedIndex;
+    input = document.querySelectorAll('option')[selected].value;
+    removeContainerChildren()
+    arrType(arrAction, input)
+    arrType(arrDrama, input)
+    arrType(arrBørn, input)
+});
 
 // Run first array => arrType(arr = images)
 // hide first Btn
-arrType()
+
 /* action.style.backgroundColor = '#fff'
 drama.style.backgroundColor = '#fff'
 børn.style.backgroundColor = '#fff' */
@@ -54,12 +63,14 @@ function removeContainerChildren() {
 /*!!!!!!!!!!!!!!!!!!!!!!!! */
 /*MAKE A HTML + arr loop => wrap a around => link to single page*/
 /*!!!!!!!!!!!!!!!!!!!!!!!! */
-let input = pickBio.value;
-console.log(input)
-arrType(arrAction, input)
+
+
+
+
+arrType(arr = arrAction, input = "0")
 // function call when arrFirst or arrLast event btn,
 // arr bestemes af hvilken btn der trykkes
-function arrType(arr = arrAction, input) {
+function arrType(arr, input) {
     
     // filter method => create new array without editing the previous array 
     const filt = arr.filter(function(newArr){
@@ -67,7 +78,6 @@ function arrType(arr = arrAction, input) {
             return newArr.bio
         }
     })
-    console.log(filt)
     if(input == 0) { 
     for (element of arr) {
             test()

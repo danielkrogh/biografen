@@ -23,3 +23,15 @@ p {
 button {
   cursor: pointer;
 }
+
+.arr-container {
+  padding-top: 120px;
+  width: 100%;
+  height: 500px;
+  background-color: #f5efef;
+}
+
+.arr-article {
+  background-color: goldenrod;
+  height: 100vh;
+}

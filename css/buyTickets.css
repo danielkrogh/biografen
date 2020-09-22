@@ -306,7 +306,7 @@
           transform: rotateX(240deg);
   -webkit-box-shadow: 0px 5px 10px 2px #343434;
           box-shadow: 0px 5px 10px 2px #343434;
-  background-image: url(/img/Poster-Trash.jpg);
+  background-image: url(../img/Poster-Trash.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -320,7 +320,7 @@
       justify-content: space-around;
 }
 
-#order #order-info div:first-of-type form {
+#order #order-info > div:first-of-type form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -330,12 +330,12 @@
           flex-direction: column;
 }
 
-#order #order-info div:first-of-type form div:first-of-type input {
+#order #order-info > div:first-of-type form div:first-of-type input {
   margin: 0;
   border-top: none;
 }
 
-#order #order-info div:first-of-type form input {
+#order #order-info > div:first-of-type form input {
   margin: 1rem 0;
   outline: none;
   border: 1px solid #343434;
@@ -345,11 +345,11 @@
   font-size: 16px;
 }
 
-#order #order-info div:first-of-type form input::-webkit-input-placeholder {
+#order #order-info > div:first-of-type form input::-webkit-input-placeholder {
   color: #343434;
 }
 
-#order #order-info div:first-of-type form button {
+#order #order-info > div:first-of-type form button {
   cursor: pointer;
   border: none;
   color: #F5EFEF;
@@ -360,7 +360,41 @@
   outline: none;
 }
 
-#order #order-info div:last-of-type #movie {
+#order #order-info > div:last-of-type {
+  width: 400px;
+}
+
+#order #order-info > div:last-of-type .info-container {
+  margin: 1rem 0;
+}
+
+#order #order-info > div:last-of-type .info-container:first-of-type {
+  margin-top: 0.5rem;
+}
+
+#order #order-info > div:last-of-type .info-container:last-of-type {
+  margin-bottom: 0;
+}
+
+#order #order-info > div:last-of-type .info-container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #343434;
+}
+
+#order #order-info > div:last-of-type .info-container > div:first-of-type {
+  border-top: 2px solid #343434;
+}
+
+#order #order-info > div:last-of-type .info-container > div:last-of-type {
+  border-bottom: 2px solid #343434;
+}
+
+#order #order-info > div:last-of-type #name, #order #order-info > div:last-of-type #movie {
   text-transform: capitalize;
 }
 

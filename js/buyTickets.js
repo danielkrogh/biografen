@@ -249,6 +249,7 @@ function setOrder() {
     ticketAdult.innerHTML = document.querySelector('#tickets > div:nth-of-type(2) .quantity').innerHTML;
     ticketYoung.innerHTML = document.querySelector('#tickets > div:nth-of-type(3) .quantity').innerHTML;
 
+    places.innerHTML = '';
     let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
     selectedSeats.forEach(number => {
         
@@ -294,5 +295,5 @@ document.querySelector('#input-phone').addEventListener('keyup', () => {
 
 
 document.querySelector('#order-btn').addEventListener('click', () => {
-    window.location.href = '/thanks.html';
+    window.location.href = './thanks.html';
 })

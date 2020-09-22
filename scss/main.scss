@@ -34,6 +34,10 @@ p {
     font-size: $p-size;
 }
 
+button {
+    cursor: pointer;
+}
+
 // HERO --------------------------------------------------------------------------------
 .hero {
     height: 100vh;
@@ -221,6 +225,9 @@ p {
     justify-content: center;
 }
 
+
+//ARRSPEC SECTION 
+
 .arrspec-section {
     width: 100%;
     height: 100vh;
@@ -233,13 +240,58 @@ p {
 
 .arrspec-article {
     display: grid;
-    justify-content: center;
+    justify-items: center;
+    grid-template-rows: auto;
+    height: 400px;
+
+    button {
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+        margin: auto;
+        margin-top: 20px;
+        border: none;
+        color: $color-white;
+        background-color: $color-dark
+    }
+
+    button:hover {
+        color: $color-dark;
+        background-color: $color-white;
+        border: 2px solid $color-dark;
+    }
+    img {
+        margin-top: 10%;
+    }
 }
 .arrspec-middle {
     height: 70%;
     width: 3px;
     background-color: $color-dark;
     margin-top: 150px;
+}
+
+
+.arrspec-header {
+    color: $color-dark;
+    margin: auto;
+    
+}
+
+.arrspec-text {
+height: 300px;
+margin-top: 10%;
+    h3 {
+        color: $color-red;
+        margin: auto;
+        width: 80%;
+    }
+
+    p {
+        margin: auto;
+        margin-top: 50px;
+        width: 80%;
+    }
 }
 
 //MEDIA QUERIES ------------------------------------------------------------------------
@@ -387,6 +439,105 @@ p {
         margin: auto;
         margin-top: 30px;
     }
-    
 
+    .senior-section-info {
+        height: 500px;
+    }
+    #senior {
+        grid-template-columns: auto;
+    }
+
+    .senior-info {
+        display: grid;
+        color: $color-white;
+        margin-left: 10%;
+        justify-content: center;
+        height: 300px;
+
+        .senior-header {
+            font-size: 24px;
+        }
+
+        .senior-text {
+            font-size: 16px;
+            margin-top: 5%;
+        }
+
+    }
+    
+    .arrspec-section {
+        width: 100%;
+        height: 1300px;
+        background-color: $color-white;
+        display: grid;
+        padding-top: 80px;
+        grid-template-columns: auto;
+        justify-content: space-evenly;
+    }
+
+    .arrspec-article {
+        display: grid;
+        justify-items: center;
+        grid-template-rows: auto;
+        height: 400px;
+    
+        button {
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+            margin: auto;
+            margin-top: 50px;
+            border: none;
+            color: $color-white;
+            background-color: $color-dark
+        }
+    
+        button:hover {
+            color: $color-dark;
+            background-color: $color-white;
+            border: 2px solid $color-dark;
+        }
+        img {
+            margin-top: 10%;
+            width: 90%;
+        }
+    }
+    .arrspec-middle {
+        height: 3px;
+        width: 70%;
+        background-color: $color-dark;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    
+    
+    .arrspec-header {
+        color: $color-dark;
+        margin: auto;
+
+        h2 {
+            font-size: 24px;
+        }
+        
+    }
+    
+    .arrspec-text {
+    height: 200px;
+    margin-top: 10%;
+        h3 {
+            color: $color-red;
+            margin: auto;
+            width: 80%;
+            font-size: 20px;
+        }
+    
+        p {
+            margin: auto;
+            margin-top: 50px;
+            width: 80%;
+            font-size: 16px;
+        }
+    }
 }

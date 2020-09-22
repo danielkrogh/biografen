@@ -20,6 +20,10 @@ p {
   font-size: 16px;
 }
 
+button {
+  cursor: pointer;
+}
+
 .hero {
   height: 100vh;
   background-image: url(/img/Biografen_Grand_Stockholm.png);
@@ -237,9 +241,31 @@ p {
 .arrspec-article {
   display: -ms-grid;
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-items: center;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  height: 400px;
+}
+
+.arrspec-article button {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: auto;
+  margin-top: 20px;
+  border: none;
+  color: #f5efef;
+  background-color: #343434;
+}
+
+.arrspec-article button:hover {
+  color: #343434;
+  background-color: #f5efef;
+  border: 2px solid #343434;
+}
+
+.arrspec-article img {
+  margin-top: 10%;
 }
 
 .arrspec-middle {
@@ -247,6 +273,28 @@ p {
   width: 3px;
   background-color: #343434;
   margin-top: 150px;
+}
+
+.arrspec-header {
+  color: #343434;
+  margin: auto;
+}
+
+.arrspec-text {
+  height: 300px;
+  margin-top: 10%;
+}
+
+.arrspec-text h3 {
+  color: #931a25;
+  margin: auto;
+  width: 80%;
+}
+
+.arrspec-text p {
+  margin: auto;
+  margin-top: 50px;
+  width: 80%;
 }
 
 @media (max-device-width: 667px) {
@@ -380,5 +428,100 @@ p {
     background-color: #f5efef;
     margin: auto;
     margin-top: 30px;
+  }
+  .senior-section-info {
+    height: 500px;
+  }
+  #senior {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .senior-info {
+    display: -ms-grid;
+    display: grid;
+    color: #f5efef;
+    margin-left: 10%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 300px;
+  }
+  .senior-info .senior-header {
+    font-size: 24px;
+  }
+  .senior-info .senior-text {
+    font-size: 16px;
+    margin-top: 5%;
+  }
+  .arrspec-section {
+    width: 100%;
+    height: 1300px;
+    background-color: #f5efef;
+    display: -ms-grid;
+    display: grid;
+    padding-top: 80px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .arrspec-article {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    height: 400px;
+  }
+  .arrspec-article button {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: auto;
+    margin-top: 50px;
+    border: none;
+    color: #f5efef;
+    background-color: #343434;
+  }
+  .arrspec-article button:hover {
+    color: #343434;
+    background-color: #f5efef;
+    border: 2px solid #343434;
+  }
+  .arrspec-article img {
+    margin-top: 10%;
+    width: 90%;
+  }
+  .arrspec-middle {
+    height: 3px;
+    width: 70%;
+    background-color: #343434;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .arrspec-header {
+    color: #343434;
+    margin: auto;
+  }
+  .arrspec-header h2 {
+    font-size: 24px;
+  }
+  .arrspec-text {
+    height: 200px;
+    margin-top: 10%;
+  }
+  .arrspec-text h3 {
+    color: #931a25;
+    margin: auto;
+    width: 80%;
+    font-size: 20px;
+  }
+  .arrspec-text p {
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+    font-size: 16px;
   }
 }

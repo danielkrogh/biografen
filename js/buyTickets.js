@@ -47,9 +47,9 @@ function calculatePrice() { // Funktion til at beregne pris
 }
 
 
-if (seniorDiscount == true) {
+if (seniorDiscount == true) { // Hvis senior rabat er true fjernes funktionalitet fra kupon
     coupon.classList.add('disable-click');
-} else if (seniorDiscount == false) {
+} else if (seniorDiscount == false) { // Hvis senior rabat er false fungerer kupon igen
     coupon.classList.remove('disable-click');
 }
 
@@ -201,23 +201,15 @@ dates.forEach(date => date.addEventListener('click', () => { // Hver gang der kl
 }))
 
 
-populateUI();
-updateSelectedCount();
-calculatePrice();
-occupySeats();
-allSelected();
-setMovieInfo();
-
-
-function occupySeats() {
+function occupySeats() { // Funtion der tilføjer klassen occupied på pladser der er markeret som optaget gennem local storage occupiedSeats
     let occupiedSeats = JSON.parse(localStorage.getItem('occupiedSeats'));
-
+console.log('s')
     if (occupiedSeats) {
         occupiedSeats.forEach(elm => seats[elm].classList.add('occupied'));
     }
 }
 
-function setMovieInfo() {
+function setMovieInfo() { // Funtion der placerer info fra valgte film
     let selectedMovieArray = JSON.parse(sessionStorage.getItem('newArray'));
 
     document.querySelector('#order h1').innerHTML = `Køb billetter til ${selectedMovieArray.title} her`;
@@ -226,9 +218,12 @@ function setMovieInfo() {
 }
 
 
-document.querySelector('#buy-btn').classList.add('disable-click');
+/*
+    Videre knap
+*/
+document.querySelector('#buy-btn').classList.add('disable-click'); // Ved load er knappen ikke funktionel
 
-window.addEventListener('click', () => {
+window.addEventListener('click', () => { // Ved klik gøres knappen funktionel hvis antallet af billetter og antallet af valgte pladser er ens. Ellers er knappen ikke funktionel
     let ticketsSelected = Number(quantity[0].innerHTML) + Number(quantity[1].innerHTML) + Number(quantity[2].innerHTML);
     let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
     
@@ -239,18 +234,17 @@ window.addEventListener('click', () => {
     }
 })
 
-
-document.querySelector('#buy-btn').addEventListener('click', () => {
+document.querySelector('#buy-btn').addEventListener('click', () => { // Ved klik på videre knap byttes der rundt på klasser, så vores bestillings container flytter til venstre og vores info container flytter ind fra højre
     document.querySelector('#order-container').classList.remove('middle')
     document.querySelector('#order-container').classList.add('hide-left')
 
     document.querySelector('#order-info').classList.remove('hide-right')
     document.querySelector('#order-info').classList.add('middle')
 
-    setOrder();
+    setInfo(); // Printer info på ny side
 })
 
-document.querySelector('#tilbage').addEventListener('click', () => {
+document.querySelector('#tilbage').addEventListener('click', () => { // Tilbage 'knap'
     document.querySelector('#order-container').classList.remove('hide-left')
     document.querySelector('#order-container').classList.add('middle')
 
@@ -260,7 +254,10 @@ document.querySelector('#tilbage').addEventListener('click', () => {
 
 
 
-
+/*
+    Info container
+*/
+// Diverse felter som skal udfyldes
 let selectedMovie = document.querySelector('#movie');
 let date = document.querySelector('#date');
 let ticketOld = document.querySelector('#ticket-old');
@@ -270,53 +267,35 @@ let places = document.querySelector('#places');
 let finalDiscount = document.querySelector('#discount');
 let totalPrice = document.querySelector('#total-price');
 
-function setOrder() {
-    selectedMovie.innerHTML = JSON.parse(sessionStorage.getItem('newArray')).title
-    date.innerHTML = document.querySelector('.active').innerHTML;
-    ticketOld.innerHTML = document.querySelector('#tickets > div:nth-of-type(1) .quantity').innerHTML;
-    ticketAdult.innerHTML = document.querySelector('#tickets > div:nth-of-type(2) .quantity').innerHTML;
-    ticketYoung.innerHTML = document.querySelector('#tickets > div:nth-of-type(3) .quantity').innerHTML;
+function setInfo() { // Udfylder diverse felter med info
+    selectedMovie.innerHTML = JSON.parse(sessionStorage.getItem('newArray')).title // Titel fra newArray
+    date.innerHTML = document.querySelector('.active').innerHTML; // Dato fra element med klassen active
+    ticketOld.innerHTML = document.querySelector('#tickets > div:nth-of-type(1) .quantity').innerHTML; // Antal senior billetter
+    ticketAdult.innerHTML = document.querySelector('#tickets > div:nth-of-type(2) .quantity').innerHTML; // Antal voksen billetter
+    ticketYoung.innerHTML = document.querySelector('#tickets > div:nth-of-type(3) .quantity').innerHTML; // Antal børne billetter
 
     places.innerHTML = '';
-    let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
-    selectedSeats.forEach(number => {
-        if (Array.from(selectedSeats).indexOf(number) + 1 == selectedSeats.length) {
+    let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats')); // Vi får fat i alle valgte pladser
+    selectedSeats.forEach(number => { // Alle valgte pladser loopes igennem
+        if (Array.from(selectedSeats).indexOf(number) + 1 == selectedSeats.length) { // Hvis valgte plads er sidst i arrayet, tilføjes denne til innerHTML
             places.innerHTML += number;
-        } else if (Array.from(selectedSeats).indexOf(number) + 1 == selectedSeats.length - 1) {
+        } else if (Array.from(selectedSeats).indexOf(number) + 1 == selectedSeats.length - 1) { // Hvis valgte plads er anden sidst i arrayet tilføjes denne til innerHTML med ' & '
             places.innerHTML += number + ' & ';
-        } else {
+        } else { // Ellers tilføjes valgte pladser til innerHTML med ', '
             places.innerHTML += number + ', ';
         }
     })
 
-    if (seniorDiscount == true) {
+    if (seniorDiscount == true) { // Hvis senior rabat er aktiv sættes rabat til 100%
         finalDiscount.innerHTML = '100%';
-    } else if (seniorDiscount == false) {
+    } else if (seniorDiscount == false) { // Hvis ikke senior rabat er aktiv udregnes rabatten
         finalDiscount.innerHTML = 100 - discount * 100 + '%';
     }
 
-    totalPrice.innerHTML = total.innerHTML;
+    totalPrice.innerHTML = total.innerHTML; // Pris fra bestillings container tilføjes til info container
 }
 
-
-
-window.addEventListener('load', () => {
-    document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
-    localStorage.removeItem('selectedSeats');
-    document.querySelectorAll('.row .seat.selected').forEach(seat => {
-        seat.classList.remove('selected')
-    })
-    document.querySelectorAll('.row .seat').forEach(seat => {
-        seat.classList.remove('occupied')
-    })
-    occupySeats()
-})
-window.addEventListener('resize', () => {
-    document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
-})
-
-
-
+// Fælgende fire tilføjer indtastning fra input felter til info container
 document.querySelector('#input-first-name').addEventListener('keyup', () => {
     document.querySelector('#name').innerHTML = document.querySelector('#input-first-name').value + ' ' + document.querySelector('#input-last-name').value;
 })
@@ -332,3 +311,32 @@ document.querySelector('#email-address').addEventListener('keyup', () => {
 document.querySelector('#input-phone').addEventListener('keyup', () => {
     document.querySelector('#phone').innerHTML = document.querySelector('#input-phone').value;
 })
+
+
+
+window.addEventListener('load', () => { // Ved load af vindue
+    localStorage.removeItem('selectedSeats'); // Fjern valgte pladser fra local storage og fjern klassen selected
+    document.querySelectorAll('.row .seat.selected').forEach(seat => {
+        seat.classList.remove('selected')
+    })
+
+    document.querySelectorAll('.row .seat').forEach(seat => { // Fjern klassen occupied
+        seat.classList.remove('occupied')
+    })
+
+    setFlowHeight();
+    occupySeats()
+    populateUI();
+    updateSelectedCount();
+    calculatePrice();
+    allSelected();
+    setMovieInfo();
+})
+
+window.addEventListener('resize', () => { // Ved resize af vindue
+    setFlowHeight();
+})
+
+function setFlowHeight() { // Tager højden fra bestillings container og tilføjer denne til parent container
+    document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
+}

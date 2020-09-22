@@ -28,6 +28,7 @@ $selected-seats: #52C78E;
     #order-container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         #buy-tickets {
 
@@ -290,6 +291,7 @@ $selected-seats: #52C78E;
     #order-info {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
 
         > div {
             width: 400px;
@@ -417,12 +419,69 @@ body {
 
 
 @media only screen and (max-width: 768px) {
-    #order-container, #order-info {
-        flex-direction: column;
+    #order-container {
+
+        > article {
+            width: 100%;
+        }
+
+        #select-seats {
+            
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     }
 
-    #movie-img img {
-        width: 100%;
+    #movie-img {
+
+        img {
+            width: 100%;
+        }
+    }
+
+    #order h1 {
+        font-size: 35px;
+    }
+
+    #buy-tickets {
+        margin: 2rem 0;
+
+        #payment-container {
+            justify-content: space-between;
+
+            > div {
+                width: 49%;
+
+                #tickets {
+
+                    > div {
+                        width: 100%!important;
+                    }
+                }
+
+                #coupon {
+                    width: 100% !important;
+                    margin-left: 0!important;
+                }
+            }
+        }
+    }
+
+    #order {
+
+        #order-info {
+
+            > div {
+                width: 100%;
+
+                &:first-of-type {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
     }
 }
 

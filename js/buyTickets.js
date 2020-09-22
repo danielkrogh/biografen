@@ -335,8 +335,13 @@ window.addEventListener('load', () => { // Ved load af vindue
 
 window.addEventListener('resize', () => { // Ved resize af vindue
     setFlowHeight();
+    console.log(screen.width)
 })
 
 function setFlowHeight() { // Tager højden fra bestillings container og tilføjer denne til parent container
     document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
 }
+
+
+let breakPoint = 768;
+

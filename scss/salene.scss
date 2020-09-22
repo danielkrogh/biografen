@@ -42,10 +42,22 @@ button {
 .salene-container {
     display: grid;
     grid-template-columns: auto;
-    margin-top: 120px;
-    margin-right: 20%;
-    margin-left: 20%;
+    padding-top: 120px;
+    margin-right: 10%;
+    margin-left: 10%;
     background-color: $color-dark;
-    width: 100%;
+    width: 80%;
     height: 1000px;
+    justify-content: center;
+}
+
+
+.salene-article {
+    width: 100%;
+
+    img {
+       width: 100%;
+    }
+
+
 }

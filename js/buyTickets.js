@@ -35,7 +35,7 @@ plus.forEach(elm => elm.addEventListener('click', () => { // Klik på plus
 function calculatePrice() { // Funktion til at beregne pris
     if (seniorDiscount == true) { // Hvis senior rabat er true er total gratis
         total.innerHTML = 'Gratis'
-    } else if (seniorDiscount == false) { // Hvis senior rabat er false udregnes prisen og innerHTML af total rettes
+    } else if (seniorDiscount == false) { // Hvis senior rabat er false ganges quantity med pris og plusses sammen. Resultat ganges med evt. rabat
         let totalPrice = 0;
 
         for (i = 0; i < quantity.length; i++) {

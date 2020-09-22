@@ -1,5 +1,6 @@
 let arrAction = [
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '0',
@@ -10,6 +11,7 @@ let arrAction = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
+        title: 'citizenfour',
         image: 'Poster-Citizenfour',
         trailer: 'Citizenfour.mp4',
         id: '1',
@@ -20,6 +22,7 @@ let arrAction = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '2',
@@ -30,6 +33,7 @@ let arrAction = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '3',
@@ -43,6 +47,7 @@ let arrAction = [
 ]
 let arrDrama = [
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '3',
@@ -53,6 +58,7 @@ let arrDrama = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '4',
@@ -63,6 +69,7 @@ let arrDrama = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '5',
@@ -75,6 +82,7 @@ let arrDrama = [
 ]
 let arrBørn = [
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '6',
@@ -85,6 +93,7 @@ let arrBørn = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '7',
@@ -95,6 +104,7 @@ let arrBørn = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '8',
@@ -105,6 +115,7 @@ let arrBørn = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     },
     {   
+        title: 'trash',
         image: 'Poster-Trash',
         trailer: 'Citizenfour.mp4',
         id: '9',
@@ -115,4 +126,3 @@ let arrBørn = [
         desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, voluptatem ut? Officia et quidem alias.' 
     }
 ];
-

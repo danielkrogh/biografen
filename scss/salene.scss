@@ -1,0 +1,51 @@
+$color-red: #931a25;
+$color-white: #f5efef;
+$color-dark: #343434;
+$h1-size: 40px;
+$h2-size: 60px;
+$h3-size: 50px;
+$p-size: 16px;
+$anchor-size: 40px;
+$border-shadows: 5px 5px 10px #00000030;
+$section-border: 3px solid;
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: $h1-size;
+}
+
+h2 {
+    font-size: $h2-size;
+}
+
+h3 {
+    font-size: $h3-size;
+}
+
+p {
+    font-size: $p-size;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+// SALENE 
+
+.salene-container {
+    display: grid;
+    grid-template-columns: auto;
+    margin-top: 120px;
+    margin-right: 20%;
+    margin-left: 20%;
+    background-color: $color-dark;
+    width: 100%;
+    height: 1000px;
+}

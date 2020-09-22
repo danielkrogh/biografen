@@ -27,11 +27,112 @@ button {
 .arr-container {
   padding-top: 120px;
   width: 100%;
-  height: 500px;
   background-color: #f5efef;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
 }
 
 .arr-article {
-  background-color: goldenrod;
-  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  margin-top: 5%;
+  margin-bottom: 0;
+}
+
+.arr-article img {
+  height: 400px;
+  margin-left: 60%;
+}
+
+.article-text {
+  width: 40%;
+  margin-left: 20%;
+  margin-top: 3%;
+  margin-bottom: 10%;
+}
+
+.article-text h3 {
+  color: #931a25;
+  margin-bottom: 10%;
+}
+
+.article-text button {
+  width: 200px;
+  height: 45px;
+  font-size: 24px;
+  font-weight: bolder;
+  margin-top: 20px;
+  color: #343434;
+  background-color: #f5efef;
+  border: 1px solid #343434;
+  margin-bottom: 50px;
+}
+
+.article-text button:hover {
+  background-color: #343434;
+  color: white;
+}
+
+.arrspec-line {
+  height: 3px;
+  width: 55%;
+  background-color: #343434;
+}
+
+@media (max-device-width: 667px) {
+  .arr-article {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    margin-top: 5%;
+  }
+  .arr-article img {
+    height: 120px;
+    margin-left: 20%;
+    margin-top: 30%;
+  }
+  .arr-container {
+    padding-top: 120px;
+    width: 100%;
+    background-color: #f5efef;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+  .arr-container h2 {
+    font-size: 18px;
+  }
+  .article-text {
+    width: 70%;
+    margin-left: 20%;
+    margin-top: 3%;
+    margin-bottom: 10%;
+  }
+  .article-text p {
+    font-size: 12px;
+  }
+  .article-text h3 {
+    color: #931a25;
+    margin-bottom: 10%;
+    font-size: 16px;
+  }
+  .article-text button {
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-top: 20px;
+    color: #343434;
+    background-color: #f5efef;
+    border: 1px solid #343434;
+    margin-bottom: 20px;
+  }
+  .article-text button:hover {
+    background-color: #343434;
+    color: white;
+  }
 }

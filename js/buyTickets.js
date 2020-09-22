@@ -10,10 +10,7 @@ let couponBtn = document.querySelector('#coupon button'); // Coupon knap
 let discount = 1; // Rabat er som udgangspunkt 1. 20% rabat vil være 0.8
 let seniorDiscount = JSON.parse(sessionStorage.getItem('seniorDiscount'));
 
-// Billet priser
-const priceOld = 70;
-const priceAdult = 85;
-const priceYoung = 65;
+let prices = [70, 85, 65] // Billet priser
 
 let total = document.querySelector('#total'); // Samlet pris
 
@@ -35,12 +32,17 @@ plus.forEach(elm => elm.addEventListener('click', () => { // Klik på plus
     allSelected(); // Funktion til at vise/skjule siddepladser kaldes
 }))
 
- // Funktion til at beregne pris
-function calculatePrice() {
-    if (seniorDiscount == true) {
+function calculatePrice() { // Funktion til at beregne pris
+    if (seniorDiscount == true) { // Hvis senior rabat er true er total gratis
         total.innerHTML = 'Gratis'
-    } else if (seniorDiscount == false) {
-        total.innerHTML = (quantity[0].innerHTML * priceOld + quantity[1].innerHTML * priceAdult + quantity[2].innerHTML * priceYoung) * discount + ' kr.'; // Quantity ganges med pris og plusses sammen. Resultat ganges med evt. rabat
+    } else if (seniorDiscount == false) { // Hvis senior rabat er false udregnes prisen og innerHTML af total rettes
+        let totalPrice = 0;
+
+        for (i = 0; i < quantity.length; i++) {
+            totalPrice += (quantity[i].innerHTML * prices[i])
+        }
+
+        total.innerHTML = totalPrice * discount + ' kr.';
     }
 }
 

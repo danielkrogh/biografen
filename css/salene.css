@@ -24,6 +24,10 @@ button {
   cursor: pointer;
 }
 
+main {
+  background-color: #f5efef;
+}
+
 .salene-container {
   display: -ms-grid;
   display: grid;
@@ -68,6 +72,23 @@ button {
   width: 100%;
 }
 
+.salene-article button {
+  width: 200px;
+  height: 45px;
+  font-size: 24px;
+  font-weight: bolder;
+  margin-top: 50px;
+  color: #343434;
+  background-color: #f5efef;
+  border: 1px solid #343434;
+  margin-bottom: 50px;
+}
+
+.salene-article button:hover {
+  background-color: #343434;
+  color: white;
+}
+
 .salene-line {
   height: 3px;
   width: 100%;
@@ -98,5 +119,16 @@ button {
   }
   .salene-article img {
     width: 100%;
+  }
+  .salene-article button {
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-top: 20px;
+    color: #343434;
+    background-color: #f5efef;
+    border: 1px solid #343434;
+    margin-bottom: 20px;
   }
 }

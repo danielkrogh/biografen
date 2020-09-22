@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/valgtfilm.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/valgtfilm.css">
+    <link rel="stylesheet" href="./css/navfooter.css">
     <title>BioBio</title>
 </head>
 <body>
@@ -13,9 +14,9 @@
         <section class="header-container">
             <section class="nav-bg"></section>
             <nav class="navbar">
-                <div class="logo">
-                    <img src="/img/biobiologo.svg" alt="logo" />
-                </div>
+                <a href="./index.html" class="logo">
+                    <img src="./img/biobiologo.svg" alt="logo" />
+                </a>
                 <div class="hamburger-menu">
                     <div class="line line1"></div>
                     <div class="line line2"></div>
@@ -24,22 +25,22 @@
                 
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">forside</a>
+                        <a href="./index.html" class="nav-link">forside</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">arrangementer</a>
+                        <a href="/arrspec.html" class="nav-link">arrangementer</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">special forstillinger</a>
+                        <a href="/salene.html" class="nav-link">salene</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">film</a>
+                        <a href="./film.html" class="nav-link">film</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">tilmeld</a>
+                        <a href="./senior-sign-up.html" class="nav-link">tilmeld</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">kontakt</a>
+                        <a href="./contact.html" class="nav-link">kontakt</a>
                     </li>
                 </ul>
             </nav>
@@ -51,8 +52,8 @@
             <div class="poster-container">
                 <img class="poster" src="" alt="">
                 <div class="btn-container">
-                    <button class="order-btn btn-left"><a href="#">køb billet</a></button>
-                    <button class="order-btn btn-right"><a href="#">senior</a></button>
+                    <button class="order-btn btn-left" id="reg"><a href="./buy-tickets.html">køb billet</a></button>
+                    <button class="order-btn btn-right" id="senior"><a href="./buy-tickets.html">senior</a></button>
                 </div>
             </div>
             <div class="desc-container">
@@ -68,8 +69,8 @@
     </main>
 
     
-    <script src="/js/movieArr.js"></script>
-    <script src="/js/valgtFilm.js"></script>
-    <script src="/js/nav.js"></script>
+    <script src="./js/movieArr.js"></script>
+    <script src="./js/valgtFilm.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 </html>

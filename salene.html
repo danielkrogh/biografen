@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="da-DK">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">    
-    <link rel="stylesheet" href="/css/navfooter.css">    
-    <link rel="stylesheet" href="/css/contact-senior-sign-up.css">    
+    <link rel="stylesheet" href="./css/salene.css">
+    <link rel="stylesheet" href="./css/navfooter.css">
+    <title>BioBio</title>
 </head>
 <body>
     <header>
@@ -47,31 +46,29 @@
         </section>
     </header>
 
-    <main id="senior-sign-up">
-        <section>
-            <article>
-                <h1>Senior tilmelding</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Fusce quis lectus quis sem lacinia nonummy. 
-                    Proin mollis lorem non dolor. In hac habitasse 
-                    platea dictumst. Nulla ultrices odio. Donec augue. 
-                    Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
-            </article>
-            <article>
-                <form novalidate action="javascript:void(0);">
-                    <input type="text" id="full-name" placeholder="navn">
-                    <input type="email" id="email-address" placeholder="email">
-                    <input type="password" id="password" placeholder="kodeord">
-                    <button id="send-btn">send</button>
-                    <div id="message"></div>
-                </form>
+    <main>
+        <section class="salene-container">
+            <div class="salene-header"><h3>Salene</h3></div>
+
+            <article class="salene-article">
+
+                <img src="/img/sal1.jpg" alt="">
+
+                
+                <section class="article-content">
+                    <h3></h3>
+                    <p></p>
+                </section>
+
             </article>
         </section>
+
     </main>
-    
+
+
     <footer class="footer">
         <section class="footer-logo">
-            <img src="/img/BiobioLogo.svg" alt="logo">
+            <img src="./img/BiobioLogo.svg" alt="logo">
         </section>
         <section class="footer-contact">
             <h1 class="footer-header"> Kontakt info</h1>
@@ -118,8 +115,6 @@
         </section>
     </footer>
 
-    <script src="/js/script.js"></script>
-    <script src="/js/nav.js"></script>
-    <script src="./js/inputVal.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 </html>

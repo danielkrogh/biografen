@@ -8,15 +8,14 @@ let coupon = document.querySelector('#coupon p'); // Felt der skal klikkes for a
 let couponCodeInput = document.querySelector('#coupon input'); // Coupon input felt
 let couponBtn = document.querySelector('#coupon button'); // Coupon knap
 let discount = 1; // Rabat er som udgangspunkt 1. 20% rabat vil være 0.8
+let seniorDiscount = JSON.parse(sessionStorage.getItem('seniorDiscount'));
 
 // Billet priser
 const priceOld = 70;
 const priceAdult = 85;
 const priceYoung = 65;
 
-// Samlet pris
-let total = document.querySelector('#total');
-
+let total = document.querySelector('#total'); // Samlet pris
 
 minus.forEach(elm => elm.addEventListener('click', () => { // Klik på minus
     if (elm.nextElementSibling.innerHTML == 0) { // Hvis quantity allerede er nul gøres intet
@@ -38,7 +37,18 @@ plus.forEach(elm => elm.addEventListener('click', () => { // Klik på plus
 
  // Funktion til at beregne pris
 function calculatePrice() {
-    total.innerHTML = (quantity[0].innerHTML * priceOld + quantity[1].innerHTML * priceAdult + quantity[2].innerHTML * priceYoung) * discount; // Quantity ganges med pris og plusses sammen. Resultat ganges med evt. rabat
+    if (seniorDiscount == true) {
+        total.innerHTML = 'Gratis'
+    } else if (seniorDiscount == false) {
+        total.innerHTML = (quantity[0].innerHTML * priceOld + quantity[1].innerHTML * priceAdult + quantity[2].innerHTML * priceYoung) * discount + ' kr.'; // Quantity ganges med pris og plusses sammen. Resultat ganges med evt. rabat
+    }
+}
+
+
+if (seniorDiscount == true) {
+    coupon.classList.add('disable-click');
+} else if (seniorDiscount == false) {
+    coupon.classList.remove('disable-click');
 }
 
 coupon.addEventListener('click', () => { // Klik på 'Kupon' tekst
@@ -100,8 +110,6 @@ function updateSelectedCount() {
     const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
 
     localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
-
-    const selectedSeatsCount = selectedSeats.length;
 }
 
 function populateUI() {
@@ -116,11 +124,11 @@ function populateUI() {
     }
 }
 
-    const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
+const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
 
-    if (selectedMovieIndex !== null) {
-        movieSelect.selectedIndex = selectedMovieIndex;
-    }
+if (selectedMovieIndex !== null) {
+    movieSelect.selectedIndex = selectedMovieIndex;
+}
 
 container.addEventListener('click', (e) => {
     if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
@@ -131,60 +139,62 @@ container.addEventListener('click', (e) => {
     }
 })
 
-
-function allSelected() {
+function allSelected() { // Knytter antal billetter valgt og antal pladser valgt sammen
     let ticketsSelected = Number(quantity[0].innerHTML) + Number(quantity[1].innerHTML) + Number(quantity[2].innerHTML);
-    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
 
-    if (ticketsSelected == 0) {
+    if (ticketsSelected == 0) { // Hvis ingen billetter er valgt fjernes klasser occupied og selected fra alle seats og selectedSeats fjernes fra local storage
         document.querySelectorAll('.row .seat').forEach(seat => {
             seat.classList.add('occupied')
-        })
-        document.querySelectorAll('.row .seat.selected').forEach(seat => {
             seat.classList.remove('selected')
         })
         localStorage.removeItem('selectedSeats')
-        occupySeats();
-    } else if (ticketsSelected == 1 && selectedSeats == null) {
+    } else if (ticketsSelected == 1 && selectedSeats == null) { // Hvis en billet er valg men ingen pladser er valgt fjernes klassen occupied fra alle seats
         document.querySelectorAll('.row .seat').forEach(seat => {
             seat.classList.remove('occupied')
         })
-        occupySeats();
-    } else if (selectedSeats !== null && selectedSeats.length == ticketsSelected) {
+    } else if (selectedSeats !== null && selectedSeats.length == ticketsSelected) { // Hvis antallet af valgte billetter og pladser er det samme tilføjes klassen occupied til alle seats uden klassen selected
         document.querySelectorAll('.row .seat:not(.selected)').forEach(seat => {
             seat.classList.add('occupied')
         })
-    } else if (selectedSeats !== null && selectedSeats.length > ticketsSelected) {
-        document.querySelectorAll('.row .seat.occupied').forEach(seat => {
+    } else if (selectedSeats !== null && selectedSeats.length > ticketsSelected) { // Hvis altallet af valgte billetter er mindre end antallet af valgte pladser fjernes klasserne occupied og selected fra alle seats og selectedSeats fjernes fra local storage
+        document.querySelectorAll('.row .seat').forEach(seat => {
             seat.classList.remove('occupied')
-        })
-        document.querySelectorAll('.row .seat.selected').forEach(seat => {
             seat.classList.remove('selected')
         })
         localStorage.removeItem('selectedSeats')
-        occupySeats();
-    } else {
-        document.querySelectorAll('.row .seat:not(.selected)').forEach(seat => {
+    } else { // Ellers fjernes klassen occupied fra alle seats 
+        document.querySelectorAll('.row .seat').forEach(seat => {
             seat.classList.remove('occupied')
         })
-        occupySeats();
     }
+
+    occupySeats();
 }
 
 
-let dates = document.querySelectorAll('.date-row p');
-const currentOccupiedSeats = JSON.parse(localStorage.getItem('currentOccupiedSeats'));
-let datesOccupied = [currentOccupiedSeats, [13,14], [15,16], [17,18], [19,20], [21,22]]
+let occupiedTrash = [20, 21, 39, 40]; // Optagede pladser til filmen 'Trash'
+let occupiedCitizenfour = [16, 17, 18, 19, 42, 43, 44, 45]; // Optagede pladser til filmen 'Citizenfour'
 
-dates[0].classList.add('active');
-localStorage.setItem('occupiedSeats', JSON.stringify(currentOccupiedSeats));
+if (JSON.parse(sessionStorage.getItem('newArray')).title == 'trash') { // Hvis titlen er trash sættes currentOccupiedSeats som occupiedTrash
+    localStorage.setItem('currentOccupiedSeats', JSON.stringify(occupiedTrash));
+} else if (JSON.parse(sessionStorage.getItem('newArray')).title == 'citizenfour') { // Hvis titlen er citizenfour sættes currentOccupiedSeats som occupiedCitizenfour
+    localStorage.setItem('currentOccupiedSeats', JSON.stringify(occupiedCitizenfour));
+}
 
-dates.forEach(date => date.addEventListener('click', () => {
-    dates.forEach(date => date.classList.remove('active'));
-    date.classList.add('active');
+let dates = document.querySelectorAll('.date-row p'); // Alle datoer
+const currentOccupiedSeats = JSON.parse(localStorage.getItem('currentOccupiedSeats')); // Optagede pladser på første dato
+let datesOccupied = [currentOccupiedSeats, [13,14], [15,16], [17,18], [19,20], [21,22]] // Array med optagede pladser på alle datoer
 
-    let clickedIndex = Array.from(dates).indexOf(date);
-    localStorage.setItem('occupiedSeats', JSON.stringify(datesOccupied[clickedIndex]));
+dates[0].classList.add('active'); // Første dato er som udgangspunkt valgt
+localStorage.setItem('occupiedSeats', JSON.stringify(currentOccupiedSeats)); // occupiedSeats sættes som currentOccupiedSeats hvilket svarer til første dato
+
+dates.forEach(date => date.addEventListener('click', () => { // Hver gang der klikkes på en dato
+    dates.forEach(date => date.classList.remove('active')); // Alle datoer får fjernet klassen active
+    date.classList.add('active'); // Den klikkede dato får tilføjet klassen active
+
+    let clickedIndex = Array.from(dates).indexOf(date); // Vi får fat i index af den klikkede dato i arrayet dates
+    localStorage.setItem('occupiedSeats', JSON.stringify(datesOccupied[clickedIndex])); // occupiedSeats sættes som datoer fra array datesOccupied ud fra index af den klikkede dato
     allSelected();
 }))
 
@@ -194,6 +204,7 @@ updateSelectedCount();
 calculatePrice();
 occupySeats();
 allSelected();
+setMovieInfo();
 
 
 function occupySeats() {
@@ -201,11 +212,15 @@ function occupySeats() {
 
     if (occupiedSeats) {
         occupiedSeats.forEach(elm => seats[elm].classList.add('occupied'));
-
-        document.querySelector('#order h1').innerHTML = `Køb billetter til ${localStorage.getItem('movieTitle')} her`;
-        document.querySelector('#movie-img img').src = `img/Poster-${localStorage.getItem('movieTitle')}.jpg`
-        document.querySelector('.screen').style.backgroundImage = `url(/img/Poster-${localStorage.getItem('movieTitle')}.jpg)`;
     }
+}
+
+function setMovieInfo() {
+    let selectedMovieArray = JSON.parse(sessionStorage.getItem('newArray'));
+
+    document.querySelector('#order h1').innerHTML = `Køb billetter til ${selectedMovieArray.title} her`;
+    document.querySelector('#movie-img img').src = `img/${selectedMovieArray.image}.jpg`
+    document.querySelector('.screen').style.backgroundImage = `url(/img/${selectedMovieArray.image}.jpg)`;
 }
 
 
@@ -254,7 +269,7 @@ let finalDiscount = document.querySelector('#discount');
 let totalPrice = document.querySelector('#total-price');
 
 function setOrder() {
-    selectedMovie.innerHTML = localStorage.getItem('movieTitle')
+    selectedMovie.innerHTML = JSON.parse(sessionStorage.getItem('newArray')).title
     date.innerHTML = document.querySelector('.active').innerHTML;
     ticketOld.innerHTML = document.querySelector('#tickets > div:nth-of-type(1) .quantity').innerHTML;
     ticketAdult.innerHTML = document.querySelector('#tickets > div:nth-of-type(2) .quantity').innerHTML;
@@ -263,7 +278,6 @@ function setOrder() {
     places.innerHTML = '';
     let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
     selectedSeats.forEach(number => {
-        
         if (Array.from(selectedSeats).indexOf(number) + 1 == selectedSeats.length) {
             places.innerHTML += number;
         } else if (Array.from(selectedSeats).indexOf(number) + 1 == selectedSeats.length - 1) {
@@ -273,8 +287,13 @@ function setOrder() {
         }
     })
 
-    finalDiscount.innerHTML = 100 - discount * 100 + '%';
-    totalPrice.innerHTML = total.innerHTML + ' kr.';
+    if (seniorDiscount == true) {
+        finalDiscount.innerHTML = '100%';
+    } else if (seniorDiscount == false) {
+        finalDiscount.innerHTML = 100 - discount * 100 + '%';
+    }
+
+    totalPrice.innerHTML = total.innerHTML;
 }
 
 

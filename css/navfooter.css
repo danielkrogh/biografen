@@ -159,7 +159,6 @@ p {
 }
 
 .footer {
-  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 40% 30% 30%;

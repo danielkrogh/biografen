@@ -1,0 +1,158 @@
+$color-red: #931a25;
+$color-white: #f5efef;
+$color-dark: #343434;
+$h1-size: 40px;
+$h2-size: 60px;
+$h3-size: 50px;
+$p-size: 16px;
+$anchor-size: 40px;
+$border-shadows: 5px 5px 10px #00000030;
+$section-border: 3px solid;
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: $h1-size;
+}
+
+h2 {
+    font-size: $h2-size;
+}
+
+h3 {
+    font-size: $h3-size;
+}
+
+p {
+    font-size: $p-size;
+}
+
+button {
+    cursor: pointer;
+}
+
+// arrspec main 
+
+.arr-container {
+    padding-top: 120px;
+    width: 100%;
+    background-color: $color-white;
+    display: grid;
+    justify-items: center;
+}
+
+.arr-article {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 5%;
+    margin-bottom: 0;
+    img {
+        height: 400px;
+        margin-left: 60%;
+    }
+}
+
+
+.article-text {
+    width: 40%;
+    margin-left: 20%;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    
+
+    h3 {
+        color: $color-red;
+        margin-bottom: 10%;
+    }
+    button {
+        width: 200px;
+        height: 45px;
+        font-size: 24px;
+        font-weight: bolder;
+        margin-top: 20px;
+        color: $color-dark;
+        background-color: $color-white;
+        border: 1px solid $color-dark;
+        margin-bottom: 50px;
+    }
+
+    button:hover {
+        background-color: $color-dark;
+        color: white;
+    }
+
+}
+
+.arrspec-line {
+    height: 3px;
+    width: 55%;
+    background-color: $color-dark;
+}
+
+
+@media (max-device-width: 667px) { 
+
+    .arr-article {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-top: 5%;
+
+        img {
+            height: 120px;
+            margin-left: 20%;
+            margin-top: 30%;
+        }
+    }
+
+    .arr-container {
+        padding-top: 120px;
+        width: 100%;
+        background-color: $color-white;
+        display: grid;
+        justify-items: center;
+
+        h2 {
+            font-size: 18px;
+        }
+    }
+
+
+    .article-text {
+        width: 70%;
+        margin-left: 20%;
+        margin-top: 3%;
+        margin-bottom: 10%;
+        
+        p {
+            font-size: 12px;
+        }
+    
+        h3 {
+            color: $color-red;
+            margin-bottom: 10%;
+            font-size: 16px;
+        }
+        button {
+            width: 80px;
+            height: 35px;
+            font-size: 14px;
+            font-weight: bolder;
+            margin-top: 20px;
+            color: $color-dark;
+            background-color: $color-white;
+            border: 1px solid $color-dark;
+            margin-bottom: 20px;
+        }
+    
+        button:hover {
+            background-color: $color-dark;
+            color: white;
+        }
+    
+    }
+}

@@ -100,8 +100,6 @@ function updateSelectedCount() {
     const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
 
     localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
-
-    const selectedSeatsCount = selectedSeats.length;
 }
 
 function populateUI() {
@@ -116,11 +114,11 @@ function populateUI() {
     }
 }
 
-    const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
+const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
 
-    if (selectedMovieIndex !== null) {
-        movieSelect.selectedIndex = selectedMovieIndex;
-    }
+if (selectedMovieIndex !== null) {
+    movieSelect.selectedIndex = selectedMovieIndex;
+}
 
 container.addEventListener('click', (e) => {
     if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
@@ -131,12 +129,11 @@ container.addEventListener('click', (e) => {
     }
 })
 
-
-function allSelected() {
+function allSelected() { // Knytter antal billetter valgt og antal sæder valgt sammen
     let ticketsSelected = Number(quantity[0].innerHTML) + Number(quantity[1].innerHTML) + Number(quantity[2].innerHTML);
-    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
 
-    if (ticketsSelected == 0) {
+    if (ticketsSelected == 0) { // Hvis ingen billetter er valgt 
         document.querySelectorAll('.row .seat').forEach(seat => {
             seat.classList.add('occupied')
         })

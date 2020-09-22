@@ -1,3 +1,7 @@
+.main {
+  padding-top: 140px;
+}
+
 .sliderContainer {
   display: -ms-grid;
   display: grid;

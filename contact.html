@@ -58,11 +58,12 @@
                     Phasellus dui. Maecenas facilisis nisl vitae nibh.</p>
             </article>
             <article>
-                <form action="javascript:void(0);">
-                    <input type="text" placeholder="navn">
-                    <input type="text" placeholder="email">
-                    <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="besked"></textarea>
-                    <button>send</button>
+                <form novalidate action="javascript:void(0);">
+                    <input type="text" id="full-name" placeholder="navn">
+                    <input type="email" id="email-address" placeholder="email">
+                    <textarea id="form-message" name="form-message" rows="4" cols="50" placeholder="besked"></textarea>
+                    <button id="send-btn">send</button>
+                    <div id="message"></div>
                 </form>
             </article>
         </section>
@@ -122,5 +123,6 @@
 
     <script src="./js/script.js"></script>
     <script src="./js/nav.js"></script>
+    <script src="./js/inputVal.js"></script>
 </body>
 </html>

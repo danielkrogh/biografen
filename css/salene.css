@@ -30,20 +30,73 @@ button {
   -ms-grid-columns: auto;
       grid-template-columns: auto;
   padding-top: 120px;
-  margin-right: 10%;
-  margin-left: 10%;
-  background-color: #343434;
-  width: 80%;
-  height: 1000px;
+  margin-right: 15%;
+  margin-left: 15%;
+  width: 70%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
+.salene-container h2 {
+  text-transform: uppercase;
+  margin-bottom: 10%;
+}
+
 .salene-article {
   width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  margin-bottom: 10%;
+}
+
+.salene-article h3 {
+  color: #931a25;
+  margin-top: 2%;
+}
+
+.salene-article p {
+  margin-top: 2%;
+  width: 80%;
 }
 
 .salene-article img {
   width: 100%;
+}
+
+.salene-line {
+  height: 3px;
+  width: 100%;
+  background-color: #343434;
+  margin-bottom: 10%;
+}
+
+@media (max-device-width: 667px) {
+  .salene-article {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    justify-items: center;
+    margin-bottom: 10%;
+  }
+  .salene-article h3 {
+    color: #931a25;
+    margin-top: 2%;
+    font-size: 18px;
+  }
+  .salene-article p {
+    margin-top: 2%;
+    width: 80%;
+    font-size: 12px;
+  }
+  .salene-article img {
+    width: 100%;
+  }
 }

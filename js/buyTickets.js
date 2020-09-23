@@ -214,7 +214,7 @@ function setMovieInfo() { // Funtion der placerer info fra valgte film
 
     document.querySelector('#order h1').innerHTML = `Køb billetter til ${selectedMovieArray.title} her`;
     document.querySelector('#movie-img img').src = `img/${selectedMovieArray.image}.jpg`
-    document.querySelector('.screen').style.backgroundImage = `url(/img/${selectedMovieArray.image}.jpg)`;
+    document.querySelector('.screen').style.backgroundImage = `url(./img/${selectedMovieArray.image}.jpg)`;
 }
 
 

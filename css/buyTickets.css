@@ -116,19 +116,6 @@
   font-weight: 700;
 }
 
-#order #order-container #buy-tickets #buy-btn {
-  margin-top: 1rem;
-  width: 100%;
-  cursor: pointer;
-  border: none;
-  color: #F5EFEF;
-  background-color: #931A25;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: .5rem 1rem;
-  outline: none;
-}
-
 #order #order-container #buy-tickets #coupon {
   width: 130px;
   margin-left: 1rem;
@@ -486,6 +473,19 @@ body {
   #order #order-info > div:first-of-type {
     margin-bottom: 2rem;
   }
+}
+
+#buy-btn {
+  margin-top: 1rem;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  color: #F5EFEF;
+  background-color: #931A25;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .5rem 1rem;
+  outline: none;
 }
 
 .disable-click {

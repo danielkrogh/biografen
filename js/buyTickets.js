@@ -203,7 +203,7 @@ dates.forEach(date => date.addEventListener('click', () => { // Hver gang der kl
 
 function occupySeats() { // Funtion der tilføjer klassen occupied på pladser der er markeret som optaget gennem local storage occupiedSeats
     let occupiedSeats = JSON.parse(localStorage.getItem('occupiedSeats'));
-console.log('s')
+
     if (occupiedSeats) {
         occupiedSeats.forEach(elm => seats[elm].classList.add('occupied'));
     }
@@ -331,11 +331,12 @@ window.addEventListener('load', () => { // Ved load af vindue
     calculatePrice();
     allSelected();
     setMovieInfo();
+    moveBuyBtn();
 })
 
 window.addEventListener('resize', () => { // Ved resize af vindue
     setFlowHeight();
-    console.log(screen.width)
+    moveBuyBtn();
 })
 
 function setFlowHeight() { // Tager højden fra bestillings container og tilføjer denne til parent container
@@ -343,5 +344,17 @@ function setFlowHeight() { // Tager højden fra bestillings container og tilføj
 }
 
 
-let breakPoint = 768;
 
+const constBuyBtn = document.querySelector('#buy-btn'); // Konstant så vi altid har køb knap tagget
+
+function moveBuyBtn() {
+    let breakPoint = 768;
+
+    if (screen.width <= breakPoint) { // Hvis skærmens bredde er mindre end eller lig med breakPoint fjernes køb knap tag og placeres i placerings vælger container
+        constBuyBtn.parentNode.removeChild(constBuyBtn);
+        document.querySelector('#select-seats').appendChild(constBuyBtn);
+    } else if (screen.width > breakPoint) { // Hvis skærmens bredde er større end breakPoint fjernes køb knap tag og placeres i køb billet container
+        constBuyBtn.parentNode.removeChild(constBuyBtn);
+        document.querySelector('#buy-tickets').appendChild(constBuyBtn);
+    }
+}

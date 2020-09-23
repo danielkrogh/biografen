@@ -106,19 +106,6 @@ $selected-seats: #52C78E;
                 }
             }
         
-            #buy-btn {
-                margin-top: 1rem;
-                width: 100%;
-                cursor: pointer;
-                border: none;
-                color: $white;
-                background-color: $red;
-                text-transform: uppercase;
-                font-weight: 700;
-                padding: .5rem 1rem;
-                outline: none;
-            }
-        
             #coupon {
                 width: 130px;
                 margin-left: 1rem;
@@ -485,6 +472,19 @@ body {
     }
 }
 
+
+#buy-btn {
+    margin-top: 1rem;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    color: $white;
+    background-color: $red;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: .5rem 1rem;
+    outline: none;
+}
 
 .disable-click {
     filter: blur(3px);

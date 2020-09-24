@@ -14,14 +14,17 @@ function movieDesc(arr) {
         // Trailer
         video.src = `mov/${arr.trailer}`;
         console.log(arr.image)
-        if(arr.image.slice(7) == "Trash") {
-                postTitle.style.color = "yellow"
-        }
+        
         function myFunction(x) {
                 if (x.matches) { // If media query matches
                 document.querySelector('.overlay').style.backgroundImage = `url("img/${arr.image}.jpg")`;
+                if(arr.image.slice(7) == "Trash") {
+                        postTitle.style.color = "yellow"
+                } else if (arr.image.slice(7) == "Riot")
+                        postTitle.style.color = "lightskyblue"
                 } else {
                         document.querySelector('.overlay').style.backgroundImage = `url("")`;
+                        postTitle.style.color = ""
                 }
               }
               

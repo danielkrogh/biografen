@@ -1,5 +1,6 @@
 
 const movieContainer = document.querySelector('.movie-container')
+const alle = document.querySelector('.alle')
 const drama = document.querySelector('.drama')
 const action = document.querySelector('.action')
 const børn = document.querySelector('.børn')
@@ -37,7 +38,12 @@ børn.addEventListener('click', () => {
     removeContainerChildren()
     arrType(arrBørn, input)
     })
-
+alle.addEventListener('click', () => {
+    removeContainerChildren()
+    arrType(arrAction, "0")
+    arrType(arrDrama, "0")
+    arrType(arrBørn, "0")
+    })
 // Dette er functonen der sletter elementor
 // Den tager elementor i movie-container i html og looper igennem vært child og sletter dem en efter en
 // og efterlader movie-container tom igen, sådanne et nyt array objector kan blive udelt i arrType og kastes ud i html

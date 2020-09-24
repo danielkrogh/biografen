@@ -8,6 +8,11 @@
   background: #F5EFEF;
 }
 
+.main .title-film {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .movie-container {
   display: -ms-grid;
   display: grid;

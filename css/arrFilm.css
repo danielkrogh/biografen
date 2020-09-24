@@ -5,7 +5,10 @@
 
 .main {
   padding-top: 140px;
-  background: #F5EFEF;
+}
+
+body {
+  background-color: #F5EFEF;
 }
 
 .movie-container {

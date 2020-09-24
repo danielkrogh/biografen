@@ -9,6 +9,7 @@ $selected-seats: #52C78E;
     max-width: 1200px;
     margin: auto;
     padding-top: 140px;
+    overflow-x: hidden;
 
     h1, h2 {
         text-transform: uppercase;
@@ -196,6 +197,9 @@ $selected-seats: #52C78E;
             }
         
             .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 perspective: 1000px;
             }
         
@@ -263,11 +267,10 @@ $selected-seats: #52C78E;
             .screen {
                 background-color: $black;
                 height: 150px;
-                width: 100%;
+                width: 90%;
                 margin: .5rem 0;
                 transform: rotateX(240deg);
                 box-shadow: 0px 5px 10px 2px $black;
-                background-image: url(../img/Poster-Trash.jpg);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;

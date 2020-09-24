@@ -102,7 +102,6 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

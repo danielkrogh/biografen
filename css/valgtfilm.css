@@ -2,7 +2,7 @@ body {
   background-color: #F5EFEF;
 }
 
-main {
+.main.choosen {
   padding-top: 140px;
   position: relative;
   padding-bottom: 40px;

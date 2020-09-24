@@ -26,7 +26,7 @@ function valForm(clickId) {
 
     // Hvis alt er valideret
     if (clickId == 'send-btn') {
-        message.innerHTML = 'Tak for din besked';
+        message.innerHTML = 'Tak for tilmeldingen.';
         return true;
     } else if (clickId == 'order-btn') {
         window.location.href = './thanks.html';

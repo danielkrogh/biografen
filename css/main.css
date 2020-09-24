@@ -437,6 +437,13 @@ button {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
+  .senior-button {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .senior-info {
     display: -ms-grid;
     display: grid;
@@ -453,6 +460,7 @@ button {
   .senior-info .senior-text {
     font-size: 16px;
     margin-top: 5%;
+    margin-right: 50px;
   }
   .arrspec-section {
     width: 100%;

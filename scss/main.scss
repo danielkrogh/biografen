@@ -450,6 +450,11 @@ margin-top: 10%;
         grid-template-columns: auto;
     }
 
+    .senior-button {
+        display: grid;
+        justify-content: center;
+    }
+
     .senior-info {
         display: grid;
         color: $color-white;
@@ -464,6 +469,7 @@ margin-top: 10%;
         .senior-text {
             font-size: 16px;
             margin-top: 5%;
+            margin-right: 50px;
         }
 
     }

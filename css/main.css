@@ -146,6 +146,14 @@ button {
   background-color: #343434 !important;
 }
 
+.fixi .movie-container .productContainer .orderBtn:hover {
+  background-color: #f5efef !important;
+}
+
+.fixi .movie-container .productContainer .orderBtn:hover a {
+  color: #343434 !important;
+}
+
 .fixi {
   padding-top: 0px;
   max-width: 100% !important;

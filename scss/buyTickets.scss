@@ -4,12 +4,17 @@ $black: #343434;
 
 $selected-seats: #52C78E;
 
+html {
+    scroll-behavior: smooth;
+}
+
 #order {
     width: 80%;
     max-width: 1200px;
     margin: auto;
     padding-top: 140px;
     overflow-x: hidden;
+    overflow-y: hidden;
 
     h1, h2 {
         text-transform: uppercase;
@@ -381,6 +386,7 @@ body {
 #order > div {
     position: relative;
     margin: 2rem 0;
+    transition: 1s;
 }
 
 #order > div > section {
@@ -472,6 +478,11 @@ body {
                 }
             }
         }
+    }
+
+    #order #order-container #select-seats .seat {
+        width: 16.5px;
+        height: 13.2px;
     }
 }
 

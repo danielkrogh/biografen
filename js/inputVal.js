@@ -25,7 +25,10 @@ function valForm(clickId) {
     }
 
     // Hvis alt er valideret
-    if (clickId == 'send-btn') {
+    if (clickId == 'send-contact-btn') {
+        message.innerHTML = 'Tak for din besked.';
+        return true;
+    } else if (clickId == 'send-senior-btn') {
         message.innerHTML = 'Tak for tilmeldingen.';
         return true;
     } else if (clickId == 'order-btn') {
@@ -55,10 +58,18 @@ function validateEmail(emailAddress) {
     return regEx.test(emailAddress);
 }
 
+// Kald valForm() ved klik på knap med '#send-contact-btn'
+let sendContactBtn = document.querySelector('#send-contact-btn');
+if (sendContactBtn !== null) {
+    sendContactBtn.addEventListener('click', () => {
+        valForm(event.target.id);
+    })
+}
+
 // Kald valForm() ved klik på knap med '#send-btn'
-let sendBtn = document.querySelector('#send-btn');
-if (sendBtn !== null) {
-    sendBtn.addEventListener('click', () => {
+let sendSeniorBtn = document.querySelector('#send-senior-btn');
+if (sendSeniorBtn !== null) {
+    sendSeniorBtn.addEventListener('click', () => {
         valForm(event.target.id);
     })
 }

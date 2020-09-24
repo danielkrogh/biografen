@@ -242,6 +242,8 @@ document.querySelector('#buy-btn').addEventListener('click', () => { // Ved klik
     document.querySelector('#order-info').classList.add('middle')
 
     setInfo(); // Printer info på ny side
+    setFlowHeight();
+    window.location.href = '#order';
 })
 
 document.querySelector('#tilbage').addEventListener('click', () => { // Tilbage 'knap'
@@ -250,6 +252,8 @@ document.querySelector('#tilbage').addEventListener('click', () => { // Tilbage 
 
     document.querySelector('#order-info').classList.remove('middle')
     document.querySelector('#order-info').classList.add('hide-right')
+
+    setFlowHeight();
 })
 
 
@@ -340,7 +344,7 @@ window.addEventListener('resize', () => { // Ved resize af vindue
 })
 
 function setFlowHeight() { // Tager højden fra bestillings container og tilføjer denne til parent container
-    document.querySelector('#order > div').style.height = document.querySelector('#order-container').clientHeight + 'px';
+    document.querySelector('#order > div').style.height = document.querySelector('.middle').clientHeight + 'px';
 }
 
 

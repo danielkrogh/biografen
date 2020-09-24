@@ -10,6 +10,7 @@ Oliver har lavet:
 - Forside
 - Arrangementer
 - Salene
+- Navigation & footer
 
 Daniel har lavet:
 - Køb billetter

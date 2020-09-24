@@ -355,10 +355,10 @@ function moveBuyBtn() {
     let breakPoint = 768;
 
     if (screen.width <= breakPoint) { // Hvis skærmens bredde er mindre end eller lig med breakPoint fjernes køb knap tag og placeres i placerings vælger container
-        constBuyBtn.parentNode.removeChild(constBuyBtn);
+        constBuyBtn.remove();
         document.querySelector('#select-seats').appendChild(constBuyBtn);
     } else if (screen.width > breakPoint) { // Hvis skærmens bredde er større end breakPoint fjernes køb knap tag og placeres i køb billet container
-        constBuyBtn.parentNode.removeChild(constBuyBtn);
+        constBuyBtn.remove();
         document.querySelector('#buy-tickets').appendChild(constBuyBtn);
     }
 }

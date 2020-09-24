@@ -6,6 +6,7 @@ body {
     padding-top: 140px;
     position: relative;
     padding-bottom: 40px;
+    background-color: unset;
 }
 .overlay {
     z-index: -1;
@@ -109,9 +110,10 @@ body {
 
 
 @media (max-width: 900px) {
-    body {
+    #valgt-film {
         background-color: black;
     }
+
     .overlay {
         opacity: 0.3;
     }
@@ -131,7 +133,7 @@ body {
         }
     }
         .poster-container{
-            margin-right: 0;
+            margin-right: 0!important;
         .poster {
             display: none;
         }

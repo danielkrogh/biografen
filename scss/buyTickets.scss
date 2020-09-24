@@ -74,6 +74,7 @@ html {
                     justify-content: space-between;
                     align-items: center;
                     height: 24px;
+                    box-sizing: content-box;
 
                     &:first-of-type {
                         border-top: none;

@@ -86,6 +86,8 @@ html {
       -ms-flex-align: center;
           align-items: center;
   height: 24px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 #order #order-container #buy-tickets #tickets > div:first-of-type {

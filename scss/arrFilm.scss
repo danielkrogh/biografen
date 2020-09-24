@@ -45,11 +45,14 @@ body {
             font-size: 16px;
             cursor: pointer;
             text-align: center;
-            .anchor,
-            .anchor:link,
-            .anchor:visited {
-                color: #fff;
+            color: #fff;
+            text-decoration: none;
+            :link,
+            :visited {
                 text-decoration: none;
+            }
+            &:hover {
+                background-color: #343434;
             }
         }
         .card {

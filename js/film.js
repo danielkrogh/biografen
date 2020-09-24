@@ -114,10 +114,8 @@ function arrType(arr, input) {
         /* create elements and add classes*/
         let productContainer = document.createElement('div')
         productContainer.classList.add('productContainer')
-        let anchor = document.createElement('a');
-        anchor.classList.add('anchor')
-        anchor.setAttribute('href', 'valgtfilm.html')
-        anchor.innerHTML = 'Køb billet';
+        
+        
         let card = document.createElement('div')
         card.classList.add('card')
     
@@ -132,8 +130,11 @@ function arrType(arr, input) {
         /*!!!!!!!!!!!!!!!!!!!!!!!! */
         /*         JSON KNAP       */
         /*!!!!!!!!!!!!!!!!!!!!!!!! */
-        let orderBtn = document.createElement('button');
+        let orderBtn = document.createElement('a');
         orderBtn.classList.add('orderBtn');
+        orderBtn.innerHTML = 'Køb billet';
+        orderBtn.setAttribute('href', 'valgtfilm.html')
+
         // set id as array id
         // loops over.. 1 2 3 
         // Vært film der bliver smidt ud i htmlèn har en nummer/array index
@@ -164,7 +165,6 @@ function arrType(arr, input) {
         /* Append elements to each other and finally to the container*/
         productContainer.appendChild(card)
         card.appendChild(img)
-        orderBtn.appendChild(anchor)
         card.appendChild(orderBtn)
         movieContainer.appendChild(productContainer)
     }

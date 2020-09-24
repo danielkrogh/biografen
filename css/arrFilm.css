@@ -3,12 +3,12 @@
           box-sizing: border-box;
 }
 
-.main {
+.top-fix {
   padding-top: 140px;
   background: #F5EFEF;
 }
 
-.main .title-film {
+.top-fix .title-film {
   width: 80%;
   margin: 0 auto;
 }

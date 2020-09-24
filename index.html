@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/arrFilm.css">
     <link rel="stylesheet" href="./css/navfooter.css">
     <title>BioBio</title>
 </head>
@@ -63,23 +64,10 @@
             <section class="highlight-header">
                 <h3>Udvalgte film</h3>
             </section>
-            <section class="highlight-films">
-
-                <section class="highlight-film">
-                    <img src="./img/Poster-Riot.jpg" alt="Movie poster">
-                    <button onclick="window.location.href='#'">LÆS MERE</button>
-                </section>
-                <section class="highlight-film">
-                    <img src="./img/Poster-Citizenfour.jpg" alt="Movie poster">
-                    <button onclick="window.location.href='#'">LÆS MERE</button>
-                </section>
-                <section class="highlight-film">
-                    <img src="./img/Poster-Trash.jpg" alt="Movie poster">
-                    <button onclick="window.location.href='#'">LÆS MERE</button>
-                </section>
-            </section>
-
-                    <div class="section-line"></div>
+            <div class="fixi">
+                <div class="section-line"></div>    
+                <div class="movie-container"></div>
+            </div>
                     <button onclick="window.location.href='/film.html'">SE FLERE FILM</button>
         </section>
 
@@ -188,7 +176,8 @@
             </ul>
         </section>
     </footer>
-
+    <script src="./js/movieArr.js"></script>
+    <script src="./js/forsideFilm.js"></script>
     <script src="./js/nav.js"></script>
 </body>
 </html>

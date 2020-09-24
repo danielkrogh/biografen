@@ -61,13 +61,17 @@ body {
   font-size: 16px;
   cursor: pointer;
   text-align: center;
-}
-
-.movie-container .productContainer .orderBtn .anchor,
-.movie-container .productContainer .orderBtn .anchor:link,
-.movie-container .productContainer .orderBtn .anchor:visited {
   color: #fff;
   text-decoration: none;
+}
+
+.movie-container .productContainer .orderBtn :link,
+.movie-container .productContainer .orderBtn :visited {
+  text-decoration: none;
+}
+
+.movie-container .productContainer .orderBtn:hover {
+  background-color: #343434;
 }
 
 .movie-container .productContainer .card {

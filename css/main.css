@@ -1678,12 +1678,9 @@ button {
   background-color: #343434 !important;
 }
 
-.fixi .movie-container .productContainer .orderBtn a {
-  color: #fff;
-}
-
 .fixi .movie-container .productContainer .orderBtn:hover {
   background-color: #f5efef !important;
+  color: black !important;
 }
 
 .fixi .movie-container .productContainer .orderBtn:hover a {

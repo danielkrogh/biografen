@@ -6,11 +6,23 @@ arrType(arr = arrForside, input = "0")
 
 function arrType(arr, input) {
 
+
+    // filter method => create new array without editing the previous array 
+    // For at opdele film i de forskelige sale/bio skal de splittes fra deres nuværende array og tildeles et nyt array,
+    // feks. alle film fra array de tre arrays, drama, action og børn med bio:3 bliver splittet fra deres eget array
+    // og sat i et nyt array med alle film med bio:3 | Det nye array hedder filt
     const filt = arr.filter(function(newArr){
         if (newArr.bio == input) {
             return newArr.bio
         }
     })
+    // her kigger vi på to ting
+    // Om vi skal køre et ufiltreret arr, eller det filtreret filt
+    // hvis input er 0 så vises alle film. Det betemes af den valgte Select option 
+    // vi kalder også på arrType() med input på 0 ved start af browser for at visse alle film fra alle kategorier
+    // arrType(arrAction, "0")
+    // arrType(arrDrama, "0")
+    // arrType(arrBørn, "0")
 
     if(input == 0) { 
     // elemetor af ufiltreret(arr) elementor sendes i createArray()    
@@ -29,10 +41,8 @@ function arrType(arr, input) {
         /* create elements and add classes*/
         let productContainer = document.createElement('div')
         productContainer.classList.add('productContainer')
-        let anchor = document.createElement('a');
-        anchor.classList.add('anchor')
-        anchor.setAttribute('href', 'valgtfilm.html')
-        anchor.innerHTML = 'Køb billet';
+        
+        
         let card = document.createElement('div')
         card.classList.add('card')
     
@@ -47,8 +57,11 @@ function arrType(arr, input) {
         /*!!!!!!!!!!!!!!!!!!!!!!!! */
         /*         JSON KNAP       */
         /*!!!!!!!!!!!!!!!!!!!!!!!! */
-        let orderBtn = document.createElement('button');
+        let orderBtn = document.createElement('a');
         orderBtn.classList.add('orderBtn');
+        orderBtn.innerHTML = 'Køb billet';
+        orderBtn.setAttribute('href', 'valgtfilm.html')
+
         // set id as array id
         // loops over.. 1 2 3 
         // Vært film der bliver smidt ud i htmlèn har en nummer/array index
@@ -79,7 +92,6 @@ function arrType(arr, input) {
         /* Append elements to each other and finally to the container*/
         productContainer.appendChild(card)
         card.appendChild(img)
-        orderBtn.appendChild(anchor)
         card.appendChild(orderBtn)
         movieContainer.appendChild(productContainer)
     }

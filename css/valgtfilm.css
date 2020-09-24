@@ -1,15 +1,45 @@
+body {
+  background-color: #F5EFEF;
+}
+
+main {
+  padding-top: 140px;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.overlay {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("img/Poster-Trash.jpg");
+}
+
 .film-sec {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10%;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  margin-bottom: 40px;
 }
 
 .film-sec .desc-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20% 0;
 }
 
 .film-sec .desc-container .post-title {
@@ -24,7 +54,7 @@
 }
 
 .film-sec .poster-container .poster {
-  width: 250px;
+  width: 350px;
 }
 
 .film-sec .poster-container .btn-container {
@@ -42,7 +72,7 @@
 
 .film-sec .poster-container .btn-container .order-btn {
   display: block;
-  width: 100%;
+  width: 175px;
   border: solid grey 1px;
   background-color: #931A25;
   padding: 4px 10px;
@@ -83,6 +113,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 0 auto;
+}
+
+.trailer-sec .video-source {
+  max-width: 900px;
 }
 
 .trailer-sec .trailer-title {
@@ -107,7 +142,49 @@
   left: -25%;
 }
 
-.trailer-sec .trailer-title .video-source {
-  width: 80%;
-  height: auto;
+@media (max-width: 900px) {
+  body {
+    background-color: black;
+  }
+  .overlay {
+    opacity: 0.3;
+  }
+  .film-sec {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .film-sec .desc-container {
+    color: #fff;
+  }
+  .film-sec .desc-container .post-desc {
+    padding-top: 40px;
+  }
+  .btn-container .order-btn {
+    width: 120px !important;
+  }
+  .poster-container {
+    margin-right: 0;
+  }
+  .poster-container .poster {
+    display: none;
+  }
+  .trailer-sec {
+    color: #931A25;
+  }
+  .trailer-sec .trailer-title {
+    font-size: 32px;
+  }
+  .trailer-sec .trailer-title::after {
+    background: #931A25;
+    height: 1px;
+    left: -60px;
+  }
+  .trailer-sec .video-source {
+    max-width: 90%;
+  }
 }
